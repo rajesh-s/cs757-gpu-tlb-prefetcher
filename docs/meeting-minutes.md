@@ -9,8 +9,10 @@ Agenda:
 We will also do this during the meeting
 
 
-- Power+Coherence (Rutwik)
+- Reducing overheads in Coherence protocols - power/energy/latency etc (Rutwik)
   -   Dynamic Last-Level Cache Allocation to Reduce Area and Power Overhead in Directory Coherence Protocols
+  -   DASC-DIR: a low-overhead coherence directory for many-core processors
+  -   
 
 - Security+Coherence (Lipika)
   - SecDir: A Secure Directory to Defeat Directory Side-Channel Attacks
