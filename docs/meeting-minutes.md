@@ -10,9 +10,10 @@ We will also do this during the meeting
 
 
 - Reducing overheads in Coherence protocols - power/energy/latency etc (Rutwik)
-  -   Dynamic Last-Level Cache Allocation to Reduce Area and Power Overhead in Directory Coherence Protocols
-  -   DASC-DIR: a low-overhead coherence directory for many-core processors
-  -   Multi-grain coherence directories, Jason Zebchuk; Babak Falsafi; Andreas Moshovos
+  -   Dynamic Last-Level Cache Allocation to Reduce Area and Power Overhead in Directory Coherence Protocols (2012)
+  -   DASC-DIR: a low-overhead coherence directory for many-core processors (2014/2015)
+  -   Multi-grain coherence directories, Jason Zebchuk; Babak Falsafi; Andreas Moshovos (2013)
+  -   SPATL: Honey, I Shrunk the Coherence Directory (2011)
 
 - Security+Coherence (Lipika)
   - SecDir: A Secure Directory to Defeat Directory Side-Channel Attacks
