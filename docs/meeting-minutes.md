@@ -21,7 +21,7 @@ _Discussion_
 
 **Left field idea:**
   - Libraries that execute compiled CUDA code to split the CUDA binary into CPU stream, GPU steam.
-  - Survey of heterogeneous computing - 
+  - Survey of heterogeneous computing - https://www.sciencedirect.com/science/article/pii/S2210537917303311 
   - Take an application and write CPP code to optimize this CPU-GPU distribution.
   - More of an HPC assignment than 757? Ambitious enough for Josh to accept it as project proposal?
 
