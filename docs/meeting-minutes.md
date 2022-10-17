@@ -2,15 +2,28 @@
 
 ## 221017
 
-Agenda: 
+_Agenda:_ 
+Project Topic and Proposal finalization(?)
 
-
-Discussion
-- COUP for GPUs = LAB
+_Discussion_
+- **COUP for GPUs = LAB**
   - Might be a steep learning curve for GPU coherence
-  - 
+  - Vishnu checked out the Ruby model and said it is still manageable
+- **Effect of prefetching on TLB-sensitive workloads**
+  - Workloads with lot of page faults, can sizes be run-time dynamic
+  - Inter-L1 TLB locality - look at this paper https://dl.acm.org/doi/10.1145/3410463.3414639
+- **Directory Coherence: Security + Size reduction (SecDir + SCD)**
+  - https://ieeexplore.ieee.org/document/6168950
+  - https://ieeexplore.ieee.org/document/8980313
+  - Combining the two ideas to analyse area and security stuff for coherence directories. 
+- **Heterosync**
+  - Adding new locks to the benchmark
 
-
+**Left field idea:**
+  - Libraries that execute compiled CUDA code to split the CUDA binary into CPU stream, GPU steam.
+  - Survey of heterogeneous computing - 
+  - Take an application and write CPP code to optimize this CPU-GPU distribution.
+  - More of an HPC assignment than 757? Ambitious enough for Josh to accept it as project proposal?
 
 ## 220929
 
