@@ -1,5 +1,17 @@
 # Meeting minutes
 
+## 221017
+
+Agenda: 
+
+
+Discussion
+- COUP for GPUs = LAB
+  - Might be a steep learning curve for GPU coherence
+  - 
+
+
+
 ## 220929
 
 Agenda:
