@@ -1,0 +1,99 @@
+\documentclass[a4paper, 12pt]{article}
+
+%%%%%%%%%%%%
+% Packages %
+%%%%%%%%%%%%
+
+\usepackage[english]{babel}
+\usepackage[noheader]{packages/sleek}
+\usepackage{packages/sleek-title}
+\usepackage{packages/sleek-theorems}
+\usepackage{packages/sleek-listings}
+\usepackage{nopageno}
+\usepackage{biblatex}
+% \usepackage[pagebackref=false]{hyperref}
+%%%%%%%%%%%%%%
+% Title-page %
+%%%%%%%%%%%%%%
+
+\logo{./resources/pdf/logo.pdf}
+\institute{Random University}
+\faculty{Faculty of Whatever Sciences}
+%\department{Department of Anything but Psychology}
+\title{A sleek \LaTeX{} template}
+\subtitle{With a sleeker title-page}
+\author{\textit{Author}\\François \textsc{Rozet}}
+%\supervisor{Linus \textsc{Torvalds}}
+%\context{Well, I was bored...}
+\date{\today}
+
+%%%%%%%%%%%%%%%%
+% Bibliography %
+%%%%%%%%%%%%%%%%
+
+\addbibresource{./resources/bib/references.bib}
+
+%%%%%%%%%%
+% Others %
+%%%%%%%%%%
+
+\lstdefinestyle{latex}{
+    language=TeX,
+    style=default,
+    %%%%%
+    commentstyle=\ForestGreen,
+    keywordstyle=\TrueBlue,
+    stringstyle=\VeronicaPurple,
+    emphstyle=\TrueBlue,
+    %%%%%
+    emph={LaTeX, usepackage, textit, textbf, textsc}
+}
+
+\FrameTBStyle{latex}
+
+\def\tbs{\textbackslash}
+
+%%%%%%%%%%%%
+% Document %
+%%%%%%%%%%%%
+
+\begin{document}
+\begin{center}
+%{\bf CS 757 Project Proposal\\ Virtual Memory Enhancements for Improving GPU Performance} \\
+{\bf CS 757 Project Proposal \\ Improving GPU Virtual Memory Performance}  \\
+Lipika Garg | Rajesh Shashi Kumar | Rutwik Jain | Vishnu Ramadas
+\end{center}
+
+%\begin{abstract}
+\noindent Systems today are embracing integrated CPU/GPUs with fully unified address space support~\cite{gpuvm}. Virtual Memory support in GPUs is useful in order to have unified address spaces with CPUs for ease of programming and efficient use of memory~\cite{gpuvm}. However, address translation bottlenecks can significantly degrade GPU application performance - L1-TLBs of GPU cores were found to have miss rates as high as 99\% for some GPU applications~\cite{valkyrie}. Baruah et. al~\cite{valkyrie} showed that there is high page sharing (spatial locality) between TLBs, and temporal locality in page access patterns across Compute Units (CUs). Valkyrie exploits these to propose a two-pronged solution: a cooperative L1-TLB prefetching and inter-TLB probing using a 16 CU ring interconnect.
+
+However, GPUs today are increasingly moving towards Multi-Chiplet module (MCM) designs~\cite{mcm-gpu}. Memory accesses across chiplets have non-uniform access latencies, and since the L2-TLB is also partitioned across chiplets, this can have more severe performance degradation. Thus, we propose extending the existing methods used by Valkyrie to improve multi-chiplet GPU performance.
+
+\textbf{Steps:}
+\begin{enumerate}
+    \item Reproduce Valkyrie model using gem5~\cite{sohi,valkyrie}.
+    \item Characterize TLB performance and locality patterns with diverse compute and memory bound workloads. Analyze results and identify cases where TLB sharing mechanisms are inefficient or virtual memory is selectively disabled for pathological access patterns.
+    \item Using design space exploration, determine the trade-offs in parameters such as TLB size, associativity, ports, non-blocking behavior by hiding miss latency through swapping another warp that could have TLB hits; page-table walker scheduling specific to the lane-based designs in GPUs. 
+    \item Explore possibility of using a different interconnect topology (tree or butterfly as opposed to ring)
+    \item  Explore the implications of MCM’s non-uniformity on the GPU’s virtual memory.  % Project usefulness onto MCM-GPU (Arka's work)
+\end{enumerate}
+
+
+ % VM also allows supporting multiple contexts GPUs and heterogeneous cache coherence with CPUs. The paper addresses careful considerations required for TLB and Page Table Walker design in GPU with to ensure reasonable VIPT-L1 translation performance in the presence of challenges such as parallel TLB lookups, far reach addresses due to round-robin warp scheduling and TLB miss stalling all threads in a warp. They determine through design space exploration, trade-offs in parameters such as TLB size, ports, non-blocking behavior by hiding miss latency through swapping another warp that could have TLB hits, page-table walker scheduling specific to the lane-based designs in GPUs. They also introduce a novel cache-aware coalesced page walker (as opposed to a serial walker on CPU) to mitigate page divergence introduced by warp scheduling on GPUs.
+ 
+%1. This paper is a seminal work that makes virtual memory practical with GPUs. With the advent of multi-tenant GPU systems that require isolated context, I am interested to see if the command processor (in contrast to OS scheduler on CPUs) can possibly influence PTE prefetch based on pointers in the kernel of concurrent workloads.
+%\end{abstract}
+
+
+ 
+
+
+% -----------------------
+% 1) A 250-word-limit abstract of your future paper. This is an exercise for concretely thinking about the motivations for your project and the key takeaways that you expect (or hope) to find in the end.
+
+% 2) An itemized list of the steps you plan to take for the project.
+
+
+\printbibliography
+
+\end{document}
