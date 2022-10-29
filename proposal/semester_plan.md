@@ -5,19 +5,21 @@ Questions for Rajesh
 - How much focus on MCM-GPU? 
 - We need to narrow down our 5 steps? 
 
-
 Before Oct 31: 
 
-* Week of Oct 31 to Nov 6:
-    * Start on reproducing Valkyrie model using gem5
-        * Single GPU model with TLBs: 
-            - Spatial locality: interconnect modelling in gem5, ring interconnect implementation
-            - Temporal Locality: add a Locality Detection Table and Prefetching
-        * Characterize compute and memory bound workloads TLB patterns on GPU (baseline model)
-            - characterization on gem5?
-* Nov 7 to Nov 13:
-            *Complete reproducing Valkyrie*
+* Week of Oct 31 to Nov 6, Nov 7 to 13 (2 weeks):
+     1A Start on reproducing Valkyrie model using gem5:
+         - baseline virtual memory system
+         - Spatial locality: ring interconnect modelling in gem5
+         - Temporal Locality: add a Locality Detection Table and Prefetching mechanism 
+     1B Characterize compute and memory bound workloads TLB sharing patterns on GPU 
+         - using gem5 chiplet GPU model that Rajesh will point to
+         - Find out how much sharing is there, what can we do? 
 
+Monday: Vishnu walks through running gem5 GPU stuff
+1A Vishnu, Rutwik (all later)
+1B Lipika, Rajesh
+On the side: Rutwik to talk to Matt/Preyesh/Rajesh about getting AMD benchmarks running with gem5 GPU
 
 * Nov 14 to Nov 20: 
 * Nov 21 to Nov 27:
