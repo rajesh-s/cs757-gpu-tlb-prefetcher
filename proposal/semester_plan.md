@@ -6,26 +6,26 @@ Questions for Rajesh
 - We need to narrow down our 5 steps? 
 
 
-    Before Oct 31: 
-    Week of 
-        Oct 31 to Nov 6:
-            * Start on reproducing Valkyrie model using gem5:
-                Single GPU model with TLBs: 
-                (1) Spatial locality: interconnect modelling in gem5, ring interconnect implementation 
-                (2) Temporal Locality: add a Locality Detection Table and Prefetching
-            * Characterize compute and memory bound workloads TLB patterns on GPU (baseline model)
-                - gem5 characterization?
-        Nov 7 to Nov 13:
-            * Complete reproducing Valkyrie
-            * 
+Before Oct 31: 
 
-        Nov 14 to Nov 20: 
-        Nov 21 to Nov 27:
-        Nov 28 to Dec 4:
-        Dec 5 to Dec 11:
+* Week of Oct 31 to Nov 6:
+    * Start on reproducing Valkyrie model using gem5
+        * Single GPU model with TLBs: 
+            - Spatial locality: interconnect modelling in gem5, ring interconnect implementation
+            - Temporal Locality: add a Locality Detection Table and Prefetching
+        * Characterize compute and memory bound workloads TLB patterns on GPU (baseline model)
+            - characterization on gem5?
+* Nov 7 to Nov 13:
+            *Complete reproducing Valkyrie*
+
+
+* Nov 14 to Nov 20: 
+* Nov 21 to Nov 27:
+* Nov 28 to Dec 4:
+* Dec 5 to Dec 11:
 
         
-
+### Task list we originally proposed
 2. Characterize TLB performance and locality patterns with diverse compute and
 memory bound workloads. Analyze results and identify cases where TLB sharing
 mechanisms are inefficient or virtual memory is selectively disabled for pathological
