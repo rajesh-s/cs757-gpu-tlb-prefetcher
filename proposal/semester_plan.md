@@ -8,8 +8,8 @@ Questions for Rajesh
 Before Oct 31: 
 
 * Week of Oct 31 to Nov 6, Nov 7 to 13 (2 weeks):
-     1A Start on reproducing Valkyrie model using gem5:
-         - baseline virtual memory system
+     * Start on reproducing Valkyrie model using gem5:
+          * baseline virtual memory system
          - Spatial locality: ring interconnect modelling in gem5
          - Temporal Locality: add a Locality Detection Table and Prefetching mechanism 
      1B Characterize compute and memory bound workloads TLB sharing patterns on GPU 
