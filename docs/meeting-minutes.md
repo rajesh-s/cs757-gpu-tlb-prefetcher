@@ -1,5 +1,16 @@
 # Meeting minutes
 
+## 221104
+
+Agenda:
+Baseline system configuration for the project
+
+From the Valkyrie paper - GPU System configuration
+
+
+
+
+
 ## 221017
 
 _Agenda:_ 
