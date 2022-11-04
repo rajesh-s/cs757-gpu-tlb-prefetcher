@@ -6,9 +6,22 @@ Agenda:
 Baseline system configuration for the project
 
 From the Valkyrie paper - GPU System configuration
+| Component         | Configuration                                   | Quantity                          |
+|-------------------|-------------------------------------------------|-----------------------------------|
+| CU                | 1 GHz                                           | 64                                |
+| L1 Vector Cache   | 16KB, 4-way, 5-cycle latency, LRU               | 64                                |
+| L1 Inst Cache     | 32KB, 4-way, 5-cycle latency, LRU               | 1 per SA (1 Inst cache per 4 CUs) |
+| L1 Scalar Cache   | 16KB, 4-way, 5-cycle latency, LRU               | 1 per SA                          |
+| L2 Cache          | 256KB, 16-way, 8-cycle latency                  | 8                                 |
+| DRAM              | 512MB HBM, 100-cycle latency                    | 8                                 |
+| L1 TLB            | 1 set, 128-way, 1-cycle latency, LRU            | 64                                |
+| L2 TLB            | 32 sets, 16-way, 10-cycle latency, 2 ports, LRU | 1                                 |
+| IOMMU             | 8 PTWs, 150-cycle latency                       | -                                 |
+| Intra-GPU Network | Single-stage XBar                               | 1                                 |
 
-
-
++ TLB miss latencies only available in FS mode on gem5
++ gem5 - need to add latency in SE mode
++  
 
 
 ## 221017
