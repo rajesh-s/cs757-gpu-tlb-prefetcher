@@ -30,7 +30,7 @@
         "mmap_using_noreserve": false,
         "multi_thread": false,
         "num_work_ids": 16,
-        "readfile": "/tmp/tmpy7bsaosj",
+        "readfile": "/tmp/tmpb7yqefyd",
         "redirect_paths": [],
         "shadow_rom_ranges": [
             "786432:917504"
@@ -8789,7 +8789,7 @@
                                     "name": "child",
                                     "path": "system.pc.south_bridge.ide.disks0.image.child",
                                     "eventq_index": 0,
-                                    "image_file": "../disk-image/x86-gpu-fs-20220512.img",
+                                    "image_file": "../disk-image/rocm42/rocm42-image/rocm42",
                                     "read_only": true
                                 },
                                 "eventq_index": 0,
@@ -8817,7 +8817,7 @@
                                     "name": "child",
                                     "path": "system.pc.south_bridge.ide.disks1.image.child",
                                     "eventq_index": 0,
-                                    "image_file": "../disk-image/x86-gpu-fs-20220512.img",
+                                    "image_file": "../disk-image/rocm42/rocm42-image/rocm42",
                                     "read_only": true
                                 },
                                 "eventq_index": 0,
