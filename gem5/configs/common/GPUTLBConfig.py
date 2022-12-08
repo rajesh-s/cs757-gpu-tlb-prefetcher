@@ -60,7 +60,6 @@ def TLB_constructor(options, level, gpu_ctrl=None, full_system=False):
                     clock = options.gpu_clock,\
                     voltage_domain = VoltageDomain(\
                         voltage = options.gpu_voltage)))" % locals()
-    return constructor_call
 
 def Coalescer_constructor(options, level, full_system):
 
@@ -94,6 +93,18 @@ def create_TLB_Coalescer(options, my_level, my_index, tlb_name,
             eval(TLB_constructor(options, my_level, gpu_ctrl, full_system)))
         coalescer_name.append(
             eval(Coalescer_constructor(options, my_level, full_system)))
+
+def LDT_constructor(options, full_system = False):
+    constructor_call = "LDT(size = options.LDTSize, \
+            LDTUpdateLatency = options.LDTUpdateLatency,\
+            LDTLookupLatency = options.LDTLookupLatency \
+            LDTNumOutPorts = options.num_compute_units"
+            
+    return constructor_call
+
+def create_LDT(options, ldt_name, full_system=False):
+    return (eval(LDT_constructor(options, full_system)))
+
 
 def config_tlb_hierarchy(options, system, shader_idx, gpu_ctrl=None,
                          full_system=False):
@@ -159,6 +170,9 @@ def config_tlb_hierarchy(options, system, shader_idx, gpu_ctrl=None,
             # the shader.
             exec('system.%s = TLB_array' % system_TLB_name)
             exec('system.%s = Coalescer_array' % system_Coalescer_name)
+    ldt = create_LDT(options, LDT_array)
+    system_LDT_name = "LDT"
+    exec('system.%s = ldt' % system_LDT_name)
 
     #===========================================================
     # Specify the TLB hierarchy (i.e., port connections)

@@ -49,7 +49,7 @@
 #include "gpu-compute/compute_unit.hh"
 #include "mem/port.hh"
 #include "mem/request.hh"
-#include "params/X86GPUTLB.hh"
+#include "params/LDT.hh"
 #include "sim/clocked_object.hh"
 #include "sim/sim_object.hh"
 
@@ -80,7 +80,7 @@ namespace X86ISA
       public:
 		  std::list<LDTEntry*> LdtList; 
 		  // Bounded list?
-		  typedef X86GPUTLBParams Params;
+		  typedef LDTParams Params;
 		  LDT(const Params &p);
 		  ~LDT();
 		  typedef enum BaseMMU::Mode Mode;
@@ -92,7 +92,7 @@ namespace X86ISA
  	  void issueUpdate(PacketPtr pkt, int index);
           int lookupLatency;
 	  int updateLatency;
-	  int size;
+	  int LDTSize;
 
 
         // L1SideReqPort is the LDT Port facing L1-TLB
@@ -114,7 +114,7 @@ namespace X86ISA
             virtual Tick recvAtomic(PacketPtr pkt) { return 0; }
             virtual void recvFunctional(PacketPtr pkt) { }
             virtual void recvRangeChange() { }
-            virtual void recvReqRetry();
+            virtual void recvReqRetry() { }
 
 		};
         class LDTEvent : public Event
@@ -130,9 +130,6 @@ namespace X86ISA
                 LDTEvent(LDT *_ldt, Addr _addr, PacketPtr _pkt, bool _isLookup, int _index) :
 			ldt(_ldt), addr(_addr), pkt(_pkt), isLookup(_isLookup), index(_index) {}
                 void process();
-                const char *description() const;
-
-                Addr getLDTEventVaddr();
         };
 
         class L1SideRspPort : public ResponsePort
@@ -146,13 +143,13 @@ namespace X86ISA
             LDT *ldt;
             int index;
 
-            virtual bool recvTimingReq(PacketPtr pkt);
+            virtual bool recvTimingReq(PacketPtr pkt) { }
             virtual Tick recvAtomic(PacketPtr pkt) { return 0; }
-            virtual void recvFunctional(PacketPtr pkt);
+            virtual void recvFunctional(PacketPtr pkt) { }
             virtual void recvRangeChange() { }
-            virtual void recvReqRetry();
+            virtual void recvReqRetry() { }
             virtual void recvRespRetry() { panic("recvRespRetry called"); }
-            virtual AddrRangeList getAddrRanges() const;
+            virtual AddrRangeList getAddrRanges() const { }
         };
 
         class L2SidePort : public RequestPort
@@ -170,7 +167,7 @@ namespace X86ISA
             virtual Tick recvAtomic(PacketPtr pkt) { return 0; }
             virtual void recvFunctional(PacketPtr pkt) { }
             virtual void recvRangeChange() { }
-            virtual void recvReqRetry();
+            virtual void recvReqRetry() { }
         };
 
         
@@ -181,8 +178,8 @@ namespace X86ISA
         L2SidePort *l2SidePort;
 	std::unordered_map<Addr, LDTEvent*> LDTAccessEvent;
 
-        Port &getPort(const std::string &if_name,
-                      PortID idx=InvalidPortID) override;
+//        Port &getPort(const std::string &if_name,
+//                      PortID idx=InvalidPortID) override;
 
 
 

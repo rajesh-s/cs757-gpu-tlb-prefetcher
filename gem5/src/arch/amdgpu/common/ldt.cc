@@ -9,8 +9,7 @@ namespace X86ISA
 	LDT::LDT(const Params &p) :
 		ClockedObject(p) {
 
-		//TODO : Change numCU param name to what's used 
-		for (int i = 0; i < p.port_cpu_side_ports_connection_count; ++i) {
+		for (int i = 0; i < p.LDTNumOutPorts; ++i) {
 			l1SideReqPort.push_back(new L1SideReqPort(csprintf("%s-req-port%d", name(), i), this, i));
 			l1SideRspPort.push_back(new L1SideRspPort(csprintf("%s-resp-port%d", name(), i), this, i));
 		}
@@ -18,11 +17,12 @@ namespace X86ISA
 	l2SidePort = new L2SidePort(csprintf("%s-port", name()),this);
     lookupLatency = p.LDTLookupLatency;
     updateLatency = p.LDTUpdateLatency;
-    size = p.LDTSize;
+    LDTSize = p.LDTSize;
 	}
 
 	LDT::~LDT() {
-		for (int i = 0; i < p.port_cpu_side_ports_connection_count; ++i)
+		int size = l1SideReqPort.size();
+		for (int i = 0; i < size; ++i)
 		{
 			delete l1SideReqPort[i];
 			l1SideReqPort.pop_back();
@@ -68,7 +68,7 @@ namespace X86ISA
 			}
 		}
 		if (isExists == false) {
-			if (LdtList.size() == this->size) {
+			if (LdtList.size() == this->LDTSize) {
 				delete LdtList.front();
 				LdtList.pop_front();
 			}
