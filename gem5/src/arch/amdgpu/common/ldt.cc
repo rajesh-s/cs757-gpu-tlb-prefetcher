@@ -1,4 +1,4 @@
-#include "src/arch/amdgpu/common/ldt.hh"
+#include "arch/amdgpu/common/ldt.hh"
 
 namespace gem5
 {
@@ -6,7 +6,8 @@ namespace gem5
 namespace X86ISA
 {
 
-	LDT::LDT(const Params &p) {
+	LDT::LDT(const Params &p) :
+		ClockedObject(p) {
 
 		//TODO : Change numCU param name to what's used 
 		for (int i = 0; i < p.port_cpu_side_ports_connection_count; ++i) {
@@ -14,39 +15,38 @@ namespace X86ISA
 			l1SideRspPort.push_back(new L1SideRspPort(csprintf("%s-resp-port%d", name(), i), this, i));
 		}
 
-	l2SidePort.push_back(new L2SidePort(csprint("s-port%d", name(), i),this);
+	l2SidePort = new L2SidePort(csprintf("%s-port", name()),this);
     lookupLatency = p.LDTLookupLatency;
     updateLatency = p.LDTUpdateLatency;
 	}
 
 	LDT::~LDT() {
-		for (int i = 0; i <p.port_cpu_side_ports_connection_count; ++i)
+		for (int i = 0; i < p.port_cpu_side_ports_connection_count; ++i)
 		{
 			delete l1SideReqPort[i];
 			l1SideReqPort.pop_back();
 			delete l1SideRspPort[i];
 			l1SideRspPort.pop_back();
 		}
-		L2SidePort* l2Port = l2SidePort.pop_back();
-		delete l2Port;
+		delete l2SidePort;
 	}
 
-	LDT::lookup(Addr va) {
-		PacketPtr ptr;
+	void LDT::lookup(Addr va) {
+		PacketPtr pkt;
 		LDTEntry *entry;
-		if (LdtList[va] == std::end) {
+		if (LdtList.find(va) == LdtList.end()) {
 		    // Perform Replacement
 		} else {
 			entry = LdtList[va];
-			ptr = entry->ptr;
+			pkt = entry->pkt;
 		}
 		for (int i = 0; i < entry->bitmap.size(); ++i) {
-			l1SideReqPort[i].sendFunctional(pkt);
+			l1SideReqPort[i]->sendFunctional(pkt);
 		}
 	}
 
-	LDT::update(Addr va, Packet ptr, int cu_num) {
-		if (LdtList[va] == std::end) {
+	void LDT::update(Addr va, PacketPtr pkt, int cu_num) {
+		if (LdtList.find(va) == LdtList.end()) {
 			LDTEntry* entry = new LDTEntry(pkt);
 			entry->bitmap.push_back(cu_num);
 			LdtList[va] = entry;
@@ -63,31 +63,33 @@ namespace X86ISA
 		}
 	}
 
-	LDT::issueLookup(PacketPtr pkt) {
-		LDTEvent *event = new LDTEvent(this, pkt->addr, pkt);
-		schedule(ldt_event, curTick() + cyclesToTicks(lookupLatency));
+	void LDT::issueLookup(PacketPtr pkt) {
+		LDTEvent *event = new LDTEvent(this, pkt->getAddr(), pkt, true, 0);
+		schedule(event, curTick() + cyclesToTicks(Cycles(lookupLatency)));
 
-		LDTAccessEvent[pkt->addr] = ldt_event;
+		LDTAccessEvent[pkt->getAddr()] = event;
 	}
 
-	LDT::issueUpdate(PacketPtr pkt, int index) {
-		LDTEvent *event = new LDTEvent(this, pkt->addr, pkt, true);
-		schedule(ldt_event, curTicks() + cyclesToTicks(updateLatency));
-		LDTAccessEvent[pkt->addr] = ldt_event;
+	void LDT::issueUpdate(PacketPtr pkt, int index) {
+		LDTEvent *event = new LDTEvent(this, pkt->getAddr(), pkt, false, index);
+		schedule(event, curTick() + cyclesToTicks(Cycles(updateLatency)));
+		LDTAccessEvent[pkt->getAddr()] = event;
 	}
 
-	LDT::LDTEvent::process() {
+	void LDT::LDTEvent::process() {
 		if (this->isLookup)
-			ldt->lookup(this->addr);
+			this->ldt->lookup(this->addr);
 		else
-			ldt->update(this->addr, this->ptr, this->index);
+			this->ldt->update(this->addr, this->pkt, this->index);
 	}
 	
-	LDT::L1SideReqPport::recvTimingReq(PacketPtr pkt) {
-		this->ldt->issueUpdate(pkt, this->index, false);
+	bool LDT::L1SideReqPort::recvTimingResp(PacketPtr pkt) {
+		this->ldt->issueUpdate(pkt, this->index);
 	}
 
-	LDT::L2SidePort::recvTimingReq(PacketPtr pkt) {
+	bool LDT::L2SidePort::recvTimingResp(PacketPtr pkt) {
 		this->ldt->issueLookup(pkt);
 	}
+}
+
 }
