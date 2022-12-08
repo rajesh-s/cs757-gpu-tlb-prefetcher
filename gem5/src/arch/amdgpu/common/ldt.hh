@@ -89,6 +89,7 @@ namespace X86ISA
 		  void      update(Addr va, PacketPtr pkt, int cu_num);
           //void setConfigAddress(uint32_t addr);
 
+ 	  void issueLookup(PacketPtr pkt);
           int accessLatency;
 
 
@@ -97,13 +98,14 @@ namespace X86ISA
 		{
 
           public:
-            L1SideReqPort(const std::string &_name, GpuTLB * gpu_TLB,
+            L1SideReqPort(const std::string &_name, LDT * _ldt,
                         PortID _index)
-                : RequestPort(_name, gpu_TLB), tlb(gpu_TLB), index(_index) { }
+                : RequestPort(_name, _ldt), ldt(_ldt), index(_index) { }
 
             std::deque<PacketPtr> retries;
 
           protected:
+	    LDT* ldt;
             int index;
 
             virtual bool recvTimingResp(PacketPtr pkt);
@@ -118,9 +120,9 @@ namespace X86ISA
         class L1SideRspPort : public ResponsePort
         {
           public:
-            L1SideRspPort(const std::string &_name, LDT * gpu_TLB,
+            L1SideRspPort(const std::string &_name, LDT * _ldt,
                         PortID _index)
-                : ResponsePort(_name, gpu_TLB), tlb(gpu_TLB), index(_index) { }
+                : ResponsePort(_name, _ldt), tlb(_ldt), index(_index) { }
 
           protected:
             LDT *tlb;
@@ -138,13 +140,13 @@ namespace X86ISA
         class L2SidePort : public RequestPort
         {
           public:
-            L2SidePort(const std::string &_name, GpuTLB * gpu_TLB)
-                : RequestPort(_name, gpu_TLB), tlb(gpu_TLB) { }
+            L2SidePort(const std::string &_name, LDT * _ldt)
+                : RequestPort(_name, gpu_TLB), ldt(_ldt) { }
 
             std::deque<PacketPtr> retries;
 
           protected:
-            GpuTLB *tlb;
+            LDT *ldt;
             int index;
 
             virtual bool recvTimingResp(PacketPtr pkt);
@@ -160,6 +162,7 @@ namespace X86ISA
         std::vector<L1SideRspPort*> l1SideRspPort;
         // TLB ports on the memory side
         L2SidePort* L2SidePort;
+	std::unordered_map<Addr, LDTEvent*> LDTAccssEvent;
 
         Port &getPort(const std::string &if_name,
                       PortID idx=InvalidPortID) override;
@@ -168,11 +171,12 @@ namespace X86ISA
         {
             private:
                 PacketPtr pkt;
+		Addr addr;
+		LDTEntry *ldtEntry;
+		bool isLookup;
 
             public:
-                LDTEvent(LDTEntry *_entry, Addr _addr,
-                        PacketPtr _pkt);
-
+                LDTEvent(LDTEntry *_entry, Addr _addr, PacketPtr _pkt, bool _isLookup);
                 void process();
                 const char *description() const;
 

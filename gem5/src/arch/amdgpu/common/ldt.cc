@@ -15,7 +15,8 @@ namespace X86ISA
 		}
 
 	l2SidePort.push_back(new L2SidePort(csprint("s-port%d", name(), i),this);
-    accessLatency = p.LDTAccessLatency;
+    lookupLatency = p.LDTLookupLatency;
+    updateLatency = p.LDTUpdateLatency;
 	}
 
 	LDT::~LDT() {
@@ -60,5 +61,33 @@ namespace X86ISA
 				if (!exists) entry->bitmap.push_back(cu_num);
 			}
 		}
+	}
+
+	LDT::issueLookup(PacketPtr pkt) {
+		LDTEvent *event = new LDTEvent(this, pkt->addr, pkt);
+		schedule(ldt_event, curTick() + cyclesToTicks(lookupLatency));
+
+		LDTAccessEvent[pkt->addr] = ldt_event;
+	}
+
+	LDT::issueUpdate(PacketPtr pkt, int index) {
+		LDTEvent *event = new LDTEvent(this, pkt->addr, pkt, true);
+		schedule(ldt_event, curTicks() + cyclesToTicks(updateLatency));
+		LDTAccessEvent[pkt->addr] = ldt_event;
+	}
+
+	LDT::LDTEvent::process() {
+		if (this->isLookup)
+			ldt->lookup(this->addr);
+		else
+			ldt->update(this->addr, this->ptr, this->index);
+	}
+	
+	LDT::L1SideReqPport::recvTimingReq(PacketPtr pkt) {
+		this->ldt->issueUpdate(pkt, this->index, false);
+	}
+
+	LDT::L2SidePort::recvTimingReq(PacketPtr pkt) {
+		this->ldt->issueLookup(pkt);
 	}
 }
