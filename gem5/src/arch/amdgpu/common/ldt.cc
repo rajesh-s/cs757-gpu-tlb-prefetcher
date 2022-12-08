@@ -18,6 +18,7 @@ namespace X86ISA
 	l2SidePort = new L2SidePort(csprintf("%s-port", name()),this);
     lookupLatency = p.LDTLookupLatency;
     updateLatency = p.LDTUpdateLatency;
+    size = p.LDTSize;
 	}
 
 	LDT::~LDT() {
@@ -34,32 +35,44 @@ namespace X86ISA
 	void LDT::lookup(Addr va) {
 		PacketPtr pkt;
 		LDTEntry *entry;
-		if (LdtList.find(va) == LdtList.end()) {
-		    // Perform Replacement
-		} else {
-			entry = LdtList[va];
-			pkt = entry->pkt;
-		}
-		for (int i = 0; i < entry->bitmap.size(); ++i) {
-			l1SideReqPort[i]->sendFunctional(pkt);
+		for (auto it = LdtList.begin(); it != LdtList.end(); ++it) {
+			LDTEntry* entry = (*it);
+			if (va == entry->pkt->getAddr()) {
+
+				pkt = entry->pkt;
+				LdtList.erase(it);
+				LdtList.push_back(entry);
+				for (int i = 0; i < entry->bitmap.size(); ++i) {
+					l1SideReqPort[i]->sendFunctional(pkt);
+				}
+				break;
+			}
 		}
 	}
 
 	void LDT::update(Addr va, PacketPtr pkt, int cu_num) {
-		if (LdtList.find(va) == LdtList.end()) {
-			LDTEntry* entry = new LDTEntry(pkt);
-			entry->bitmap.push_back(cu_num);
-			LdtList[va] = entry;
-		} else {
-			LDTEntry* entry = LdtList[va];
-			bool exists = false;
-			for (int i = 0; i < entry->bitmap.size(); ++i) {
-				if (entry->bitmap[i] == cu_num) {
-					exists = true;
-					break;
+		bool isExists = false;
+		for (auto it = LdtList.begin(); it != LdtList.end(); ++it) {
+			LDTEntry* entry = (*it);
+			if (va == entry->pkt->getAddr()) {
+				isExists = true;
+				bool isExistsInBitmap = false;
+				for (int i = 0; i < entry->bitmap.size(); ++i) {
+					if (entry->bitmap[i] == cu_num) {
+						isExistsInBitmap = true;
+						break;
+					}
 				}
-				if (!exists) entry->bitmap.push_back(cu_num);
+				if (!isExistsInBitmap) entry->bitmap.push_back(cu_num);
+				break;
 			}
+		}
+		if (isExists == false) {
+			if (LdtList.size() == this->size) {
+				delete LdtList.front();
+				LdtList.pop_front();
+			}
+			LdtList.push_back(new LDTEntry(pkt));
 		}
 	}
 

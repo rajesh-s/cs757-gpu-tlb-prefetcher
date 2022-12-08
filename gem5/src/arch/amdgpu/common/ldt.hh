@@ -78,7 +78,7 @@ namespace X86ISA
     {
 
       public:
-		  std::map<Addr, LDTEntry*> LdtList; 
+		  std::list<LDTEntry*> LdtList; 
 		  // Bounded list?
 		  typedef X86GPUTLBParams Params;
 		  LDT(const Params &p);
@@ -88,12 +88,11 @@ namespace X86ISA
           void dumpAll();
           void lookup(Addr va);
 	  void update(Addr va, PacketPtr pkt, int cu_num);
-          //void setConfigAddress(uint32_t addr);
-
  	  void issueLookup(PacketPtr pkt);
  	  void issueUpdate(PacketPtr pkt, int index);
           int lookupLatency;
 	  int updateLatency;
+	  int size;
 
 
         // L1SideReqPort is the LDT Port facing L1-TLB
