@@ -102,3 +102,10 @@ def tlb_options(parser):
     parser.add_argument("--L3ProbesPerCycle", type=int, default="2")
     parser.add_argument("--L3CoalescingWindow", type=int, default="1")
     parser.add_argument("--L3DisableCoalescing", action="store_true")
+
+    #==================================================================
+    #   LDT Options
+    #==================================================================
+    parser.add_argument("--LDTSize", type=int, default="100")
+    parser.add_argument("--LDTUpdateLatency", type=int, default="1")
+    parser.add_argument("--LDTLookupLatency", type=int, default="1")

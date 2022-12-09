@@ -49,8 +49,8 @@
 #include "gpu-compute/compute_unit.hh"
 #include "mem/port.hh"
 #include "mem/request.hh"
-#include "params/X86GPUTLB.hh"
-
+#include "params/LDT.hh"
+#include "sim/clocked_object.hh"
 #include "sim/sim_object.hh"
 
 namespace gem5
@@ -63,14 +63,14 @@ class ThreadContext;
 namespace X86ISA
 {
 
-    class LDTEntry: public ClockedObject
+    class LDTEntry
     {
 		public:
 			int index;
 			std::vector<int> bitmap;
 			PacketPtr pkt;
-			LDTEntry(PacketPtr(_pkt)) :
-				pkt(_pkt);
+			LDTEntry(PacketPtr _pkt) :
+				pkt(_pkt) {}
     };
 
 
@@ -78,18 +78,21 @@ namespace X86ISA
     {
 
       public:
-		  std::map<Addr, LDTEntry*> LdtList; 
+		  std::list<LDTEntry*> LdtList; 
 		  // Bounded list?
-		  typedef X86GPUTLBParams Params;
+		  typedef LDTParams Params;
 		  LDT(const Params &p);
+		  ~LDT();
 		  typedef enum BaseMMU::Mode Mode;
 
           void dumpAll();
-          LDTEntry *lookup(Addr va);
-		  void      update(Addr va, PacketPtr pkt, int cu_num);
-          //void setConfigAddress(uint32_t addr);
-
-          int accessLatency;
+          void lookup(Addr va);
+	  void update(Addr va, PacketPtr pkt, int cu_num);
+ 	  void issueLookup(PacketPtr pkt);
+ 	  void issueUpdate(PacketPtr pkt, int index);
+          int lookupLatency;
+	  int updateLatency;
+	  int LDTSize;
 
 
         // L1SideReqPort is the LDT Port facing L1-TLB
@@ -97,61 +100,74 @@ namespace X86ISA
 		{
 
           public:
-            L1SideReqPort(const std::string &_name, GpuTLB * gpu_TLB,
+            L1SideReqPort(const std::string &_name, LDT * _ldt,
                         PortID _index)
-                : RequestPort(_name, gpu_TLB), tlb(gpu_TLB), index(_index) { }
+                : RequestPort(_name, _ldt), ldt(_ldt), index(_index) { }
 
             std::deque<PacketPtr> retries;
 
           protected:
+	    LDT* ldt;
             int index;
 
             virtual bool recvTimingResp(PacketPtr pkt);
             virtual Tick recvAtomic(PacketPtr pkt) { return 0; }
             virtual void recvFunctional(PacketPtr pkt) { }
             virtual void recvRangeChange() { }
-            virtual void recvReqRetry();
+            virtual void recvReqRetry() { }
 
 		};
+        class LDTEvent : public Event
+        {
+            private:
+                PacketPtr pkt;
+		Addr addr;
+		LDT *ldt;
+		bool isLookup;
+		int index;
 
+            public:
+                LDTEvent(LDT *_ldt, Addr _addr, PacketPtr _pkt, bool _isLookup, int _index) :
+			ldt(_ldt), addr(_addr), pkt(_pkt), isLookup(_isLookup), index(_index) {}
+                void process();
+        };
 
         class L1SideRspPort : public ResponsePort
         {
           public:
-            L1SideRspPort(const std::string &_name, LDT * gpu_TLB,
+            L1SideRspPort(const std::string &_name, LDT * _ldt,
                         PortID _index)
-                : ResponsePort(_name, gpu_TLB), tlb(gpu_TLB), index(_index) { }
+                : ResponsePort(_name, _ldt), ldt(_ldt), index(_index) { }
 
           protected:
-            LDT *tlb;
+            LDT *ldt;
             int index;
 
-            virtual bool recvTimingReq(PacketPtr pkt);
+            virtual bool recvTimingReq(PacketPtr pkt) { }
             virtual Tick recvAtomic(PacketPtr pkt) { return 0; }
-            virtual void recvFunctional(PacketPtr pkt);
+            virtual void recvFunctional(PacketPtr pkt) { }
             virtual void recvRangeChange() { }
-            virtual void recvReqRetry();
+            virtual void recvReqRetry() { }
             virtual void recvRespRetry() { panic("recvRespRetry called"); }
-            virtual AddrRangeList getAddrRanges() const;
+            virtual AddrRangeList getAddrRanges() const { }
         };
 
         class L2SidePort : public RequestPort
         {
           public:
-            L2SidePort(const std::string &_name, GpuTLB * gpu_TLB)
-                : RequestPort(_name, gpu_TLB), tlb(gpu_TLB) { }
+            L2SidePort(const std::string &_name, LDT * _ldt)
+                : RequestPort(_name, _ldt), ldt(_ldt) { }
 
             std::deque<PacketPtr> retries;
 
           protected:
-            GpuTLB *tlb;
-            int index;
+            LDT *ldt;
 
             virtual bool recvTimingResp(PacketPtr pkt);
             virtual Tick recvAtomic(PacketPtr pkt) { return 0; }
             virtual void recvFunctional(PacketPtr pkt) { }
             virtual void recvRangeChange() { }
-            virtual void recvReqRetry();
+            virtual void recvReqRetry() { }
         };
 
         
@@ -159,51 +175,39 @@ namespace X86ISA
         std::vector<L1SideReqPort*> l1SideReqPort;
         std::vector<L1SideRspPort*> l1SideRspPort;
         // TLB ports on the memory side
-        L2SidePort* L2SidePort;
+        L2SidePort *l2SidePort;
+	std::unordered_map<Addr, LDTEvent*> LDTAccessEvent;
 
-        Port &getPort(const std::string &if_name,
-                      PortID idx=InvalidPortID) override;
+//        Port &getPort(const std::string &if_name,
+//                      PortID idx=InvalidPortID) override;
 
-        class LDTEvent : public Event
-        {
-            private:
-                PacketPtr pkt;
 
-            public:
-                LDTEvent(LDTEntry *_entry, Addr _addr,
-                        PacketPtr _pkt);
-
-                void process();
-                const char *description() const;
-
-                Addr getLDTEventVaddr();
-        };
 
       protected:
-        struct LDTStats : public statistics::Group
-        {
-            LDTStats(statistics::Group *parent);
-
-            // local_stats are as seen from the TLB
-            // without taking into account coalescing
-            statistics::Scalar numLDTAccesses;
-            statistics::Scalar numLDTHits;
-            statistics::Scalar numLDTMisses;
-//            statistics::Formula localTLBMissRate;
-
-            // from the CU perspective (global)
-            statistics::Scalar accessCycles;
-            // from the CU perspective (global)
-            statistics::Scalar pageTableCycles;
-            statistics::Scalar numUniquePages;
-            // from the perspective of this TLB
-            statistics::Scalar localCycles;
-            // from the perspective of this TLB
-            statistics::Formula localLatency;
-            // I take the avg. per page and then
-            // the avg. over all pages.
-            statistics::Scalar avgReuseDistance;
-        } stats;
+//        struct LDTStats : public statistics::Group
+//        {
+//            LDTStats(statistics::Group *parent);
+//
+//            // local_stats are as seen from the TLB
+//            // without taking into account coalescing
+//            statistics::Scalar numLDTAccesses;
+//            statistics::Scalar numLDTHits;
+//            statistics::Scalar numLDTMisses;
+////            statistics::Formula localTLBMissRate;
+//
+//            // from the CU perspective (global)
+//            statistics::Scalar accessCycles;
+//            // from the CU perspective (global)
+//            statistics::Scalar pageTableCycles;
+//            statistics::Scalar numUniquePages;
+//            // from the perspective of this TLB
+//            statistics::Scalar localCycles;
+//            // from the perspective of this TLB
+//            statistics::Formula localLatency;
+//            // I take the avg. per page and then
+//            // the avg. over all pages.
+//            statistics::Scalar avgReuseDistance;
+//        } stats;
     };
 }
 
