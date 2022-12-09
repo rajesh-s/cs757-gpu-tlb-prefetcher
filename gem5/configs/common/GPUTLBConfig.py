@@ -240,10 +240,16 @@ def config_tlb_hierarchy(options, system, shader_idx, gpu_ctrl=None,
                     system.l2_coalescer[0].cpu_side_ports[%d]' % \
                     (name, index, l2_coalescer_index))
             l2_coalescer_index += 1
+            if name == 'l1':
+                exec('system.%s_tlb[%d].l1_ldt_side_port = \
+                        system.LDT.l1_side_port[%d}' % \
+                        (index, index))
 
     # L2 <-> L3
     system.l2_tlb[0].mem_side_ports[0] = \
         system.l3_coalescer[0].cpu_side_ports[0]
+    system.l2_tlb[0].l2_ldt_side_port = \
+            system.LDT.l2_side_port
 
     # L3 TLB Vega page table walker to memory for full system only
     if full_system:

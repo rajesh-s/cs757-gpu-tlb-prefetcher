@@ -114,6 +114,18 @@ namespace X86ISA
 		DPRINTF(GPUTLB, "Inside L2SideReqPort::recvTimingResp\n");
 		this->ldt->issueLookup(pkt);
 	}
+
+        Port &
+        LDT::getPort(const std::string &if_name, PortID idx)
+        {
+            if (if_name == "l1_side_port") {
+              return *l1SideRspPort;
+    	    } else if (if_name == "l2_side_port") {
+    	      return *l2SidePort;
+            } else {
+                panic("TLBCoalescer::getPort: unknown port %s\n", if_name);
+            }
+        }
 }
 
 }

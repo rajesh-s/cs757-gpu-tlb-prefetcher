@@ -259,7 +259,7 @@ namespace X86ISA
 	class LdtSidePort : public RequestPort
 	{
 	  public:
-	    LdtSidePort(const std::string &_name, GpuTLB* gpu_TLB, PortId _index)
+	    LdtReqPort(const std::string &_name, GpuTLB* gpu_TLB, PortId _index)
 		    :  RequestPort(_name, gpu_TLB), tlb(gpu_TLB), index(_index) {}
 
 	  protected:
@@ -272,12 +272,31 @@ namespace X86ISA
 	    virtual void recvReqRetry();
 	}
 
+	class LdtRespPort : public ResponsePort
+	{
+	  public:
+	    LdtRespPort(const std::string &_name, GpuTLB* gpu_TLB, PortId _index)
+		    :  ResponsePort(_name, gpu_TLB), tlb(gpu_TLB), index(_index) {}
+
+	  protected:
+	    GpuTLB *tlb;
+	    int index;
+            virtual bool recvTimingReq(PacketPtr pkt);
+            virtual Tick recvAtomic(PacketPtr pkt) { return 0; }
+            virtual void recvFunctional(PacketPtr pkt);
+            virtual void recvRangeChange() { }
+            virtual void recvReqRetry();
+            virtual void recvRespRetry() { panic("recvRespRetry called"); }
+            virtual AddrRangeList getAddrRanges() const;
+	}
+
         // TLB ports on the cpu Side
         std::vector<CpuSidePort*> cpuSidePort;
-	LdtSidePort* l1LdtSidePort;
+	LdtReqPort* l1LdtReqPort;
+	LdtRespPort* l1LdtRespPort;
         // TLB ports on the memory side
         std::vector<MemSidePort*> memSidePort;
-	LdtSidePort* l2LdtSidePort;
+	LdtReqPort* l2LdtSidePort;
 
         Port &getPort(const std::string &if_name,
                       PortID idx=InvalidPortID) override;

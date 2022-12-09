@@ -119,8 +119,9 @@ namespace X86ISA
             cpuSidePort.push_back(new CpuSidePort(csprintf("%s-port%d",
                                   name(), i), this, i));
         }
-	l1LdtSidePort = new LdtSidePort(csprintf("l1-ldt-port", this, 0);
-	l2LdtSidePort = new LdtSidePort(csprintf("l2-ldt-port", this, 0);
+	l1LdtReqPort = new LdtReqPort(csprintf("l1-ldt-req-port", this, 0);
+	l1LdtRespPort = new LdtRespPort(csprintf("l1-ldt-resp-port", this, 0);
+	l2LdtSidePort = new LdtReqPort(csprintf("l2-ldt-req-port", this, 0);
 
         // create the request ports based on the number of connected ports
         for (size_t i = 0; i < p.port_mem_side_ports_connection_count; ++i) {
@@ -153,6 +154,10 @@ namespace X86ISA
             hasMemSidePort = true;
 
             return *memSidePort[idx];
+        } else if (if_name == "l1_ldt_side_port") {
+	    return *l1LdtReqPort;
+	} else if (if_name == "l2_ldt_side_port") {
+	    return *l2LdtSidePort;
         } else {
             panic("TLBCoalescer::getPort: unknown port %s\n", if_name);
         }
@@ -1044,7 +1049,7 @@ namespace X86ISA
     }
 
     bool
-    GpuTLB::LdtSidePort::recvTimingReq(PacketPtr pkt)
+    GpuTLB::LdtRespPort::recvTimingReq(PacketPtr pkt)
     {
 	TlbEntry* entry = new TlbEntry(0, pkt->req->getPaddr(), pkt->req->getVaddr(), false, false);
 	entry = insert(pkt->req->getVaddr(), gpuEntry);
@@ -1143,7 +1148,7 @@ namespace X86ISA
         Addr virt_page_addr = roundDown(pkt->req->getVaddr(),
                                         X86ISA::PageBytes);
 
-	l1LdtSidePort->sendFunctional(pkt);
+	l1LdtReqPort->sendFunctional(pkt);
         if (update_stats)
             tlb->updatePageFootprint(virt_page_addr);
 
