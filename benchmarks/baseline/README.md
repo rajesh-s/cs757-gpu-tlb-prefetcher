@@ -1,0 +1,3 @@
+# Baseline config
+
+`docker run -u $UID:$GID --volume $(pwd):$(pwd) -w $(pwd) gcr.io/gem5-test/gcn-gpu:v22-1 gem5/build/GCN3_X86/gem5.opt gem5/configs/example/apu_se.py -n 3 --num-compute-units=64 --cu-per-sa=16 --num-gpu-complex=4 --reg-alloc-policy=dynamic --num-tccs=8 --bw-scalor=8 --num-dirs=64 --mem-size=16GB --mem-type=HBM_2000_4H_1x64 --vreg-file-size=16384 --sreg-file-size=800 --tcc-size=4MB --gpu-clock=1801MHz --ruby-clock=1000MHz --TCC_latency=121  --TCP_latency=16 --max-coalesces-per-cycle=10 --sqc-size=16kB --benchmark-root="gem5-resources/src/gpu/square/bin" -c square`
