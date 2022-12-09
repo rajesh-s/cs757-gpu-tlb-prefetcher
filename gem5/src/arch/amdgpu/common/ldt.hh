@@ -193,7 +193,7 @@ namespace X86ISA
 //            statistics::Scalar numLDTAccesses;
 //            statistics::Scalar numLDTHits;
 //            statistics::Scalar numLDTMisses;
-////            statistics::Formula localTLBMissRate;
+//            statistics::Formula localTLBMissRate;
 //
 //            // from the CU perspective (global)
 //            statistics::Scalar accessCycles;

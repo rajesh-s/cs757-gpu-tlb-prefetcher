@@ -836,6 +836,13 @@ class Request
         return _vaddr;
     }
 
+    Addr
+    setVaddr(Addr addr)
+    {
+	_vaddr = addr;
+	privateFlags.isSet(VALID_VADDR);
+    }
+
     /** Accesssor for the requestor id. */
     RequestorID
     requestorId() const

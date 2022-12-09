@@ -8,6 +8,7 @@ namespace X86ISA
 
 	LDT::LDT(const Params &p) :
 		ClockedObject(p) {
+		DPRINTF(GPUTLB, "Inside LDT()\n");
 
 		for (int i = 0; i < p.LDTNumOutPorts; ++i) {
 			l1SideReqPort.push_back(new L1SideReqPort(csprintf("%s-req-port%d", name(), i), this, i));
@@ -22,6 +23,7 @@ namespace X86ISA
 
 	LDT::~LDT() {
 		int size = l1SideReqPort.size();
+		DPRINTF(GPUTLB, "Inside ~LDT()\n");
 		for (int i = 0; i < size; ++i)
 		{
 			delete l1SideReqPort[i];
@@ -33,6 +35,7 @@ namespace X86ISA
 	}
 
 	void LDT::lookup(Addr va) {
+		DPRINTF(GPUTLB, "Inside lookup\n");
 		PacketPtr pkt;
 		LDTEntry *entry;
 		for (auto it = LdtList.begin(); it != LdtList.end(); ++it) {
@@ -51,6 +54,7 @@ namespace X86ISA
 	}
 
 	void LDT::update(Addr va, PacketPtr pkt, int cu_num) {
+		DPRINTF(GPUTLB, "Inside update"\n");
 		bool isExists = false;
 		for (auto it = LdtList.begin(); it != LdtList.end(); ++it) {
 			LDTEntry* entry = (*it);
@@ -77,6 +81,7 @@ namespace X86ISA
 	}
 
 	void LDT::issueLookup(PacketPtr pkt) {
+		DPRINTF(GPUTLB, "Inside issueLookup\n");
 		LDTEvent *event = new LDTEvent(this, pkt->getAddr(), pkt, true, 0);
 		schedule(event, curTick() + cyclesToTicks(Cycles(lookupLatency)));
 
@@ -84,23 +89,29 @@ namespace X86ISA
 	}
 
 	void LDT::issueUpdate(PacketPtr pkt, int index) {
+		DPRINTF(GPUTLB, "Inside issueUpdate\n");
 		LDTEvent *event = new LDTEvent(this, pkt->getAddr(), pkt, false, index);
 		schedule(event, curTick() + cyclesToTicks(Cycles(updateLatency)));
 		LDTAccessEvent[pkt->getAddr()] = event;
 	}
 
 	void LDT::LDTEvent::process() {
-		if (this->isLookup)
-			this->ldt->lookup(this->addr);
-		else
-			this->ldt->update(this->addr, this->pkt, this->index);
+		DPRINTF(GPUTLB, "Inside process\n");
+		Addr virt_page_addr = roundDown(this->addr, X86ISA::PageBytes);
+		if (this->isLookup) 
+			this->ldt->lookup(virt_page_addr);
+		else {
+			this->ldt->update(virt_page_addr, this->pkt, this->index);
+		}
 	}
 	
 	bool LDT::L1SideReqPort::recvTimingResp(PacketPtr pkt) {
+		DPRINTF(GPUTLB, "Inside L1SideReqPort::recvTimingResp\n");
 		this->ldt->issueUpdate(pkt, this->index);
 	}
 
 	bool LDT::L2SidePort::recvTimingResp(PacketPtr pkt) {
+		DPRINTF(GPUTLB, "Inside L2SideReqPort::recvTimingResp\n");
 		this->ldt->issueLookup(pkt);
 	}
 }
