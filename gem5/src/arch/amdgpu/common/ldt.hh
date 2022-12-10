@@ -113,7 +113,7 @@ namespace X86ISA
 	    LDT* ldt;
             int index;
 
-            virtual bool recvTimingResp(PacketPtr pkt);
+            virtual bool recvTimingResp(PacketPtr pkt) { }
             virtual Tick recvAtomic(PacketPtr pkt) { return 0; }
             virtual void recvFunctional(PacketPtr pkt) { }
             virtual void recvRangeChange() { }
@@ -148,29 +148,31 @@ namespace X86ISA
 
             virtual bool recvTimingReq(PacketPtr pkt) { }
             virtual Tick recvAtomic(PacketPtr pkt) { return 0; }
-            virtual void recvFunctional(PacketPtr pkt) { }
+            virtual void recvFunctional(PacketPtr pkt);
             virtual void recvRangeChange() { }
             virtual void recvReqRetry() { }
             virtual void recvRespRetry() { panic("recvRespRetry called"); }
             virtual AddrRangeList getAddrRanges() const { }
         };
 
-        class L2SidePort : public RequestPort
+        class L2SidePort : public ResponsePort
         {
           public:
             L2SidePort(const std::string &_name, LDT * _ldt)
-                : RequestPort(_name, _ldt), ldt(_ldt) { }
+                : ResponsePort(_name, _ldt), ldt(_ldt) { }
 
             std::deque<PacketPtr> retries;
 
           protected:
             LDT *ldt;
 
-            virtual bool recvTimingResp(PacketPtr pkt);
+            virtual bool recvTimingReq(PacketPtr pkt) { }
             virtual Tick recvAtomic(PacketPtr pkt) { return 0; }
-            virtual void recvFunctional(PacketPtr pkt) { }
+            virtual void recvFunctional(PacketPtr pkt);
             virtual void recvRangeChange() { }
             virtual void recvReqRetry() { }
+            virtual void recvRespRetry() { panic("recvRespRetry called"); }
+            virtual AddrRangeList getAddrRanges() const { }
         };
 
         

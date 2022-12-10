@@ -43,4 +43,5 @@ class LDT(ClockedObject):
     LDTLookupLatency = Param.Int(1, "LDT Lookup Latency")
     LDTNumOutPorts = Param.Int(64, "LDT Num Ports")
     l2_side_port = ResponsePort("Port")
-    l1_side_port = ResponsePort("Port")
+    l1_rsp_port = VectorResponsePort("Port")
+    l1_req_port = VectorRequestPort("Port")

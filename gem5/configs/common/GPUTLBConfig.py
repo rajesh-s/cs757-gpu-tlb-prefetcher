@@ -60,6 +60,7 @@ def TLB_constructor(options, level, gpu_ctrl=None, full_system=False):
                     clock = options.gpu_clock,\
                     voltage_domain = VoltageDomain(\
                         voltage = options.gpu_voltage)))" % locals()
+    return constructor_call
 
 def Coalescer_constructor(options, level, full_system):
 
@@ -95,10 +96,10 @@ def create_TLB_Coalescer(options, my_level, my_index, tlb_name,
             eval(Coalescer_constructor(options, my_level, full_system)))
 
 def LDT_constructor(options, full_system = False):
-    constructor_call = "LDT(size = options.LDTSize, \
+    constructor_call = "LDT(LDTSize = options.LDTSize, \
             LDTUpdateLatency = options.LDTUpdateLatency,\
-            LDTLookupLatency = options.LDTLookupLatency \
-            LDTNumOutPorts = options.num_compute_units"
+            LDTLookupLatency = options.LDTLookupLatency, \
+            LDTNumOutPorts = options.num_compute_units)"
             
     return constructor_call
 
@@ -170,7 +171,7 @@ def config_tlb_hierarchy(options, system, shader_idx, gpu_ctrl=None,
             # the shader.
             exec('system.%s = TLB_array' % system_TLB_name)
             exec('system.%s = Coalescer_array' % system_Coalescer_name)
-    ldt = create_LDT(options, LDT_array)
+    ldt = create_LDT(options, "LDT")
     system_LDT_name = "LDT"
     exec('system.%s = ldt' % system_LDT_name)
 
@@ -241,9 +242,12 @@ def config_tlb_hierarchy(options, system, shader_idx, gpu_ctrl=None,
                     (name, index, l2_coalescer_index))
             l2_coalescer_index += 1
             if name == 'l1':
-                exec('system.%s_tlb[%d].l1_ldt_side_port = \
-                        system.LDT.l1_side_port[%d}' % \
-                        (index, index))
+                exec('system.%s_tlb[%d].l1_ldt_side_req_port = \
+                        system.LDT.l1_rsp_port[%d]' % \
+                        (name, index, index))
+                exec('system.%s_tlb[%d].l1_ldt_side_rsp_port = \
+                        system.LDT.l1_req_port[%d]' % \
+                        (name, index, index))
 
     # L2 <-> L3
     system.l2_tlb[0].mem_side_ports[0] = \

@@ -155,8 +155,10 @@ namespace X86ISA
             hasMemSidePort = true;
 
             return *memSidePort[idx];
-        } else if (if_name == "l1_ldt_side_port") {
+        } else if (if_name == "l1_ldt_side_req_port") {
 	    return *l1LdtReqPort;
+        } else if (if_name == "l1_ldt_side_rsp_port") {
+	    return *l1LdtRespPort;
 	} else if (if_name == "l2_ldt_side_port") {
 	    return *l2LdtSidePort;
         } else {

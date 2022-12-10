@@ -53,6 +53,9 @@ class X86GPUTLB(ClockedObject):
     slave    = DeprecatedParam(cpu_side_ports,
                         '`slave` is now called `cpu_side_ports`')
     mem_side_ports = VectorRequestPort("Ports on side closer to memory")
+    l2_side_port = RequestPort("Port")
+    l1_ldt_side_req_port = RequestPort("Port")
+    l1_ldt_side_rsp_port = ResponsePort("Port")
     master   = DeprecatedParam(mem_side_ports,
                         '`master` is now called `mem_side_ports`')
     allocationPolicy = Param.Bool(True, "Allocate on an access")

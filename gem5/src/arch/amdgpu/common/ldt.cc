@@ -111,12 +111,12 @@ namespace X86ISA
 		}
 	}
 	
-	bool LDT::L1SideReqPort::recvTimingResp(PacketPtr pkt) {
+	void LDT::L1SideRspPort::recvFunctional(PacketPtr pkt) {
 		DPRINTF(GPUTLB, "Inside L1SideReqPort::recvTimingResp\n");
 		this->ldt->issueUpdate(pkt, this->index);
 	}
 
-	bool LDT::L2SidePort::recvTimingResp(PacketPtr pkt) {
+	void LDT::L2SidePort::recvFunctional(PacketPtr pkt) {
 		DPRINTF(GPUTLB, "Inside L2SideReqPort::recvTimingResp\n");
 		this->ldt->issueLookup(pkt);
 	}
@@ -124,8 +124,16 @@ namespace X86ISA
         Port &
         LDT::getPort(const std::string &if_name, PortID idx)
         {
-            if (if_name == "l1_side_port") {
+            if (if_name == "l1_rsp_port") {
+	      if (idx >= static_cast<PortID>(l1SideRspPort.size())) {
+		 panic("LDT::getPort: unknown index %d\n", idx);
+	      }
               return *l1SideRspPort[idx];
+	    } else if (if_name == "l1_req_port") {
+	      if (idx >= static_cast<PortID>(l1SideReqPort.size())) {
+		 panic("LDT::getPort: unknown index %d\n", idx);
+	      }
+	      return *l1SideReqPort[idx];
     	    } else if (if_name == "l2_side_port") {
     	      return *l2SidePort;
             } else {
