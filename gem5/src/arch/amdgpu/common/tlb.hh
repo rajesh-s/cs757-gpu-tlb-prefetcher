@@ -256,26 +256,26 @@ namespace X86ISA
             virtual void recvReqRetry();
         };
 
-	class LdtSidePort : public RequestPort
+	class LdtReqPort : public RequestPort
 	{
 	  public:
-	    LdtReqPort(const std::string &_name, GpuTLB* gpu_TLB, PortId _index)
-		    :  RequestPort(_name, gpu_TLB), tlb(gpu_TLB), index(_index) {}
+	    LdtReqPort(const std::string &_name, GpuTLB* gpu_TLB, PortID _index)
+		    :  RequestPort(_name, gpu_TLB), tlb(gpu_TLB), index(_index) { }
 
 	  protected:
 	    GpuTLB *tlb;
 	    int index;
-	    virtual bool recvTimingResp(PacketPtr pkt);
+	    virtual bool recvTimingResp(PacketPtr pkt) { }
 	    virtual Tick recvAtomic(PacketPtr pkt) { return 0;}
 	    virtual void recvFunctional(PacketPtr pkt) { }
 	    virtual void recvRangeChange() { }
-	    virtual void recvReqRetry();
-	}
+	    virtual void recvReqRetry() { }
+	};
 
 	class LdtRespPort : public ResponsePort
 	{
 	  public:
-	    LdtRespPort(const std::string &_name, GpuTLB* gpu_TLB, PortId _index)
+	    LdtRespPort(const std::string &_name, GpuTLB* gpu_TLB, PortID _index)
 		    :  ResponsePort(_name, gpu_TLB), tlb(gpu_TLB), index(_index) {}
 
 	  protected:
@@ -283,12 +283,12 @@ namespace X86ISA
 	    int index;
             virtual bool recvTimingReq(PacketPtr pkt);
             virtual Tick recvAtomic(PacketPtr pkt) { return 0; }
-            virtual void recvFunctional(PacketPtr pkt);
+            virtual void recvFunctional(PacketPtr pkt) { }
             virtual void recvRangeChange() { }
-            virtual void recvReqRetry();
+            virtual void recvReqRetry() { }
             virtual void recvRespRetry() { panic("recvRespRetry called"); }
-            virtual AddrRangeList getAddrRanges() const;
-	}
+            virtual AddrRangeList getAddrRanges() const { AddrRangeList ranges; return ranges; }
+	};
 
         // TLB ports on the cpu Side
         std::vector<CpuSidePort*> cpuSidePort;

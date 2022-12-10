@@ -94,6 +94,9 @@ namespace X86ISA
 	  int updateLatency;
 	  int LDTSize;
 
+	  Port &getPort(const std::string &if_name,
+			  PortID idx=InvalidPortID) override;
+
 
         // L1SideReqPort is the LDT Port facing L1-TLB
         class L1SideReqPort : public RequestPort 

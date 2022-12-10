@@ -31,6 +31,7 @@
  */
 
 #include "arch/amdgpu/common/tlb.hh"
+#include "arch/amdgpu/common/ldt.hh"
 
 #include <cmath>
 #include <cstring>
@@ -119,9 +120,9 @@ namespace X86ISA
             cpuSidePort.push_back(new CpuSidePort(csprintf("%s-port%d",
                                   name(), i), this, i));
         }
-	l1LdtReqPort = new LdtReqPort(csprintf("l1-ldt-req-port", this, 0);
-	l1LdtRespPort = new LdtRespPort(csprintf("l1-ldt-resp-port", this, 0);
-	l2LdtSidePort = new LdtReqPort(csprintf("l2-ldt-req-port", this, 0);
+	l1LdtReqPort = new LdtReqPort(csprintf("l1-ldt-req-port"), this, 0);
+	l1LdtRespPort = new LdtRespPort("l1-ldt-resp-port", this, 0);
+	l2LdtSidePort = new LdtReqPort(csprintf("l2-ldt-req-port"), this, 0);
 
         // create the request ports based on the number of connected ports
         for (size_t i = 0; i < p.port_mem_side_ports_connection_count; ++i) {
@@ -187,8 +188,7 @@ namespace X86ISA
 	    if (name() == "system.l2_tlb")
 	    {
 		DPRINTF(GPUTLB, "Inside L2 Eviction\n");
-	    	RequestPtr req = new Request();
-	    	req->setPaddr(newEntry->paddr);
+	    	RequestPtr req = std::make_shared<Request>(newEntry->paddr, 0, 0, 0, 0, 0);
 	    	PacketPtr pkt = new Packet(req,MemCmd::TlbiExtSync);
 	    	l2LdtSidePort->sendFunctional(pkt);
 	    }
@@ -220,7 +220,7 @@ namespace X86ISA
 
                 if (update_lru) {
                     entryList[set].push_front(*entry);
-                    entryList[set].erasne(entry);
+                    entryList[set].erase(entry);
                     entry = entryList[set].begin();
                 }
 
@@ -1052,7 +1052,7 @@ namespace X86ISA
     GpuTLB::LdtRespPort::recvTimingReq(PacketPtr pkt)
     {
 	TlbEntry* entry = new TlbEntry(0, pkt->req->getPaddr(), pkt->req->getVaddr(), false, false);
-	entry = insert(pkt->req->getVaddr(), gpuEntry);
+	this->tlb->insert(pkt->req->getVaddr(), *entry);
 	return true;
     }
 
@@ -1148,7 +1148,7 @@ namespace X86ISA
         Addr virt_page_addr = roundDown(pkt->req->getVaddr(),
                                         X86ISA::PageBytes);
 
-	l1LdtReqPort->sendFunctional(pkt);
+	this->tlb->l1LdtReqPort->sendFunctional(pkt);
         if (update_stats)
             tlb->updatePageFootprint(virt_page_addr);
 

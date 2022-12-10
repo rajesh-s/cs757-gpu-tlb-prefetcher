@@ -1,4 +1,10 @@
 #include "arch/amdgpu/common/ldt.hh"
+#include "debug/GPUTLB.hh"
+#include "mem/packet_access.hh"
+#include "mem/page_table.hh"
+#include "mem/request.hh"
+#include "sim/process.hh"
+#include "sim/pseudo_inst.hh"
 
 namespace gem5
 {
@@ -54,7 +60,7 @@ namespace X86ISA
 	}
 
 	void LDT::update(Addr va, PacketPtr pkt, int cu_num) {
-		DPRINTF(GPUTLB, "Inside update"\n");
+		DPRINTF(GPUTLB, "Inside update\n");
 		bool isExists = false;
 		for (auto it = LdtList.begin(); it != LdtList.end(); ++it) {
 			LDTEntry* entry = (*it);
@@ -119,7 +125,7 @@ namespace X86ISA
         LDT::getPort(const std::string &if_name, PortID idx)
         {
             if (if_name == "l1_side_port") {
-              return *l1SideRspPort;
+              return *l1SideRspPort[idx];
     	    } else if (if_name == "l2_side_port") {
     	      return *l2SidePort;
             } else {
