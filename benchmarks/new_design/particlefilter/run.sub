@@ -1,0 +1,21 @@
+universe = docker
+docker_image = gcr.io/gem5-test/gcn-gpu:v22-1
+
+initialdir = results
+log=chtc.log
+error=chtc.err
+output=output.txt
+
+executable = benchmark.sh
+arguments =  particlefilter/ particlefilter_naive -x 128 -y 128 -z 10 -np 1000
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT_OR_EVICT
+transfer_input_files = ../../../../gem5/, ../../../../gem5-resources/src/gpu/rodinia/particlefilter
+transfer_output_files = m5out
+stream_output = True
+
+request_cpus = 1
+request_memory = 16GB
+request_disk = 12GB
+
+queue 1
