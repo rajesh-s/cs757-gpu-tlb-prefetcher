@@ -1,0 +1,10 @@
+baseline/backprop/results/m5out/stats.txt
+baseline/bfs/results/m5out/stats.txt
+baseline/dwt2d/results/m5out/stats.txt
+baseline/gaussian/results/m5out/stats.txt
+baseline/hotspot/results/m5out/stats.txt
+baseline/hybridsort/results/m5out/stats.txt
+baseline/lavaMD/results/m5out/stats.txt
+baseline/lud/results/m5out/stats.txt
+baseline/nw/results/m5out/stats.txt
+baseline/particlefilter/results/m5out/stats.txt
