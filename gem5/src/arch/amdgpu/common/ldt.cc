@@ -40,19 +40,20 @@ namespace X86ISA
 		delete l2SidePort;
 	}
 
-	void LDT::lookup(Addr va, PacketPtr ptr) {
+	void LDT::lookup(Addr va, PacketPtr pkt) {
 		DPRINTF(GPUTLB, "Inside lookup\n");
-		PacketPtr pkt;
 		LDTEntry *entry;
 		for (auto it = LdtList.begin(); it != LdtList.end(); ++it) {
+			DPRINTF(GPUTLB, "Inside lookup loop\n");
 			LDTEntry* entry = (*it);
 			if (va == entry->vaddr) {
-
+				DPRINTF(GPUTLB, "Inside lookup condition\n");
 //				pkt = entry->pkt;
 				LdtList.erase(it);
 				LdtList.push_back(entry);
+				DPRINTF(GPUTLB, "Inside lookup done reordering lru\n");
 				for (int i = 0; i < entry->bitmap.size(); ++i) {
-					l1SideReqPort[i]->sendFunctional(pkt);
+					l1SideReqPort[entry->bitmap[i]]->sendFunctional(pkt);
 				}
 				break;
 			}
@@ -103,9 +104,8 @@ namespace X86ISA
 		Addr virt_page_addr = roundDown(this->addr, X86ISA::PageBytes);
 		if (this->isLookup) 
 			this->ldt->lookup(virt_page_addr, this->pkt);
-		else {
+		else 
 			this->ldt->update(virt_page_addr, this->pkt, this->index);
-		}
 	}
 	
 	void LDT::L1SideRspPort::recvFunctional(PacketPtr pkt) {
@@ -115,6 +115,7 @@ namespace X86ISA
 
 	void LDT::L2SidePort::recvFunctional(PacketPtr pkt) {
 		DPRINTF(GPUTLB, "Inside L2SideReqPort::recvTimingResp\n");
+		DPRINTF(GPUTLB, "Packet addr : %ld\n", pkt->getAddr());
 		this->ldt->issueLookup(pkt);
 	}
 

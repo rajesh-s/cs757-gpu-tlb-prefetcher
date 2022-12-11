@@ -110,6 +110,8 @@ namespace X86ISA
 
             std::deque<PacketPtr> retries;
 
+	    int getIndex() { return this->index;}
+
           protected:
 	    LDT* ldt;
             int index;

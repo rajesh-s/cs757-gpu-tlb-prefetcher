@@ -836,11 +836,11 @@ class Request
         return _vaddr;
     }
 
-    Addr
+    void
     setVaddr(Addr addr)
     {
 	_vaddr = addr;
-	privateFlags.isSet(VALID_VADDR);
+	privateFlags.set(VALID_VADDR);
     }
 
     /** Accesssor for the requestor id. */

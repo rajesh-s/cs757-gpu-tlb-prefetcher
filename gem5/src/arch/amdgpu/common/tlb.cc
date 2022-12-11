@@ -1059,6 +1059,7 @@ namespace X86ISA
     bool
     GpuTLB::LdtRespPort::recvTimingReq(PacketPtr pkt)
     {
+	DPRINTF(GPUTLB, "Received prefetched page from LDT\n");
 	TlbEntry* entry = new TlbEntry(0, pkt->req->getPaddr(), pkt->req->getVaddr(), false, false);
 	this->tlb->insert(pkt->req->getVaddr(), *entry);
 	return true;
