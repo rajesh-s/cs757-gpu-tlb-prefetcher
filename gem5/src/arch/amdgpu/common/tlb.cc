@@ -186,12 +186,14 @@ namespace X86ISA
 		// And push the data to the LDT port here using ldtPort->sendFUnctional(pkt)
             newEntry = entryList[set].back();
             entryList[set].pop_back();
-
-	    if (name() == "system.l2_tlb")
+	    DPRINTF(GPUTLB, "Evicting! %s\n", name());
+	    if (name().find("system.l2_tlb") != std::string::npos)
 	    {
 		DPRINTF(GPUTLB, "Inside L2 Eviction\n");
-	    	RequestPtr req = std::make_shared<Request>(newEntry->paddr, 0, 0, 0, 0, 0);
-	    	PacketPtr pkt = new Packet(req,MemCmd::TlbiExtSync);
+	    	RequestPtr req = std::make_shared<Request>();
+		req->setPaddr(newEntry->paddr);
+		req->setVaddr(newEntry->vaddr);
+	    	PacketPtr pkt = new Packet(req, MemCmd::TlbiExtSync);
 	    	l2LdtSidePort->sendFunctional(pkt);
 	    }
         }
@@ -1042,6 +1044,10 @@ namespace X86ISA
             tlb->issueTLBLookup(pkt);
             // update number of outstanding translation requests
             tlb->outstandingReqs++;
+	    if (name().find("l1_tlb") != std::string::npos) {
+		    DPRINTF(GPUTLB, "Sending Update Req to LDT\n");
+		    this->tlb->l1LdtReqPort->sendFunctional(pkt);
+	    }
             return true;
          } else {
             DPRINTF(GPUTLB, "Reached maxCoalescedReqs number %d\n",
@@ -1150,7 +1156,6 @@ namespace X86ISA
         Addr virt_page_addr = roundDown(pkt->req->getVaddr(),
                                         X86ISA::PageBytes);
 
-	this->tlb->l1LdtReqPort->sendFunctional(pkt);
         if (update_stats)
             tlb->updatePageFootprint(virt_page_addr);
 

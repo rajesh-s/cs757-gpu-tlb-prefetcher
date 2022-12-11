@@ -69,8 +69,9 @@ namespace X86ISA
 			int index;
 			std::vector<int> bitmap;
 			PacketPtr pkt;
-			LDTEntry(PacketPtr _pkt) :
-				pkt(_pkt) {}
+			Addr vaddr;
+			LDTEntry(PacketPtr _pkt, Addr _vaddr) :
+				pkt(_pkt), vaddr(_vaddr) {}
     };
 
 
@@ -86,7 +87,7 @@ namespace X86ISA
 		  typedef enum BaseMMU::Mode Mode;
 
           void dumpAll();
-          void lookup(Addr va);
+          void lookup(Addr va, PacketPtr pkt);
 	  void update(Addr va, PacketPtr pkt, int cu_num);
  	  void issueLookup(PacketPtr pkt);
  	  void issueUpdate(PacketPtr pkt, int index);

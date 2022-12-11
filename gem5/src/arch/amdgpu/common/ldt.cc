@@ -40,15 +40,15 @@ namespace X86ISA
 		delete l2SidePort;
 	}
 
-	void LDT::lookup(Addr va) {
+	void LDT::lookup(Addr va, PacketPtr ptr) {
 		DPRINTF(GPUTLB, "Inside lookup\n");
 		PacketPtr pkt;
 		LDTEntry *entry;
 		for (auto it = LdtList.begin(); it != LdtList.end(); ++it) {
 			LDTEntry* entry = (*it);
-			if (va == entry->pkt->getAddr()) {
+			if (va == entry->vaddr) {
 
-				pkt = entry->pkt;
+//				pkt = entry->pkt;
 				LdtList.erase(it);
 				LdtList.push_back(entry);
 				for (int i = 0; i < entry->bitmap.size(); ++i) {
@@ -64,7 +64,7 @@ namespace X86ISA
 		bool isExists = false;
 		for (auto it = LdtList.begin(); it != LdtList.end(); ++it) {
 			LDTEntry* entry = (*it);
-			if (va == entry->pkt->getAddr()) {
+			if (va == entry->vaddr) {
 				isExists = true;
 				bool isExistsInBitmap = false;
 				for (int i = 0; i < entry->bitmap.size(); ++i) {
@@ -82,30 +82,27 @@ namespace X86ISA
 				delete LdtList.front();
 				LdtList.pop_front();
 			}
-			LdtList.push_back(new LDTEntry(pkt));
+			LdtList.push_back(new LDTEntry(pkt, va));
 		}
 	}
 
 	void LDT::issueLookup(PacketPtr pkt) {
 		DPRINTF(GPUTLB, "Inside issueLookup\n");
-		LDTEvent *event = new LDTEvent(this, pkt->getAddr(), pkt, true, 0);
+		LDTEvent *event = new LDTEvent(this, pkt->req->getVaddr(), pkt, true, 0);
 		schedule(event, curTick() + cyclesToTicks(Cycles(lookupLatency)));
-
-		LDTAccessEvent[pkt->getAddr()] = event;
 	}
 
 	void LDT::issueUpdate(PacketPtr pkt, int index) {
 		DPRINTF(GPUTLB, "Inside issueUpdate\n");
-		LDTEvent *event = new LDTEvent(this, pkt->getAddr(), pkt, false, index);
+		LDTEvent *event = new LDTEvent(this, pkt->req->getVaddr(), pkt, false, index);
 		schedule(event, curTick() + cyclesToTicks(Cycles(updateLatency)));
-		LDTAccessEvent[pkt->getAddr()] = event;
 	}
 
 	void LDT::LDTEvent::process() {
 		DPRINTF(GPUTLB, "Inside process\n");
 		Addr virt_page_addr = roundDown(this->addr, X86ISA::PageBytes);
 		if (this->isLookup) 
-			this->ldt->lookup(virt_page_addr);
+			this->ldt->lookup(virt_page_addr, this->pkt);
 		else {
 			this->ldt->update(virt_page_addr, this->pkt, this->index);
 		}
