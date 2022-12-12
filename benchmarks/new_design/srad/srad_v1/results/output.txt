@@ -1,0 +1,166 @@
+Benchmark Root:   Arg1: srad_v1/
+Benchmark Name:   Arg2: srad
+Options:          Arg3: 100 0.5 502 458
+Global frequency set at 1000000000000 ticks per second
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 22.0.0.2
+gem5 compiled Dec 11 2022 17:32:32
+gem5 started Dec 11 2022 17:59:02
+gem5 executing on rajesh-4095.0-barolo.cs.wisc.edu, pid 8
+command line: build/GCN3_X86/gem5.opt configs/example/apu_se.py -n 3 --num-compute-units=64 --cu-per-sa=16 --num-gpu-complex=4 --reg-alloc-policy=dynamic --num-tccs=8 --bw-scalor=8 --num-dirs=64 --mem-size=16GB --mem-type=HBM_2000_4H_1x64 --vreg-file-size=16384 --sreg-file-size=800 --tcc-size=4MB --gpu-clock=1801MHz --ruby-clock=1000MHz --TCC_latency=121 --TCP_latency=16 --max-coalesces-per-cycle=10 --sqc-size=16kB --benchmark-root=srad_v1/ -c srad '--options=100 0.5 502 458'
+
+info: Standard input is not a terminal, disabling listeners.
+Num SQC =  16 Num scalar caches =  16 Num CU =  64
+incrementing idx on  4
+incrementing idx on  8
+incrementing idx on  12
+incrementing idx on  16
+incrementing idx on  20
+incrementing idx on  24
+incrementing idx on  28
+incrementing idx on  32
+incrementing idx on  36
+incrementing idx on  40
+incrementing idx on  44
+incrementing idx on  48
+incrementing idx on  52
+incrementing idx on  56
+incrementing idx on  60
+incrementing idx on  4
+incrementing idx on  8
+incrementing idx on  12
+incrementing idx on  16
+incrementing idx on  20
+incrementing idx on  24
+incrementing idx on  28
+incrementing idx on  32
+incrementing idx on  36
+incrementing idx on  40
+incrementing idx on  44
+incrementing idx on  48
+incrementing idx on  52
+incrementing idx on  56
+incrementing idx on  60
+"dot" with args ['-Tsvg', '/nobackup/condor/execute/dir_608793/tmpd9at_pik'] returned code: 1
+
+stdout, stderr:
+ b''
+b'Error: /nobackup/condor/execute/dir_608793/tmpd9at_pik: syntax error in line 59993 scanning a quoted string (missing endquote? longer than 16384?)\nString starting:"clk_domain&#61;system.ruby.clk_domain&#10;\\eventq_index&#61;0&#10;\\ext_routing_l\n'
+
+Time spent in different stages of the application:
+ 0.000000000000 s,  0.000000000000 percent : SETUP VARIABLES
+ 0.000032000000 s,  0.002588525647 percent : READ COMMAND LINE PARAMETERS
+ 0.602366983891 s, 48.726322174072 percent : READ IMAGE FROM FILE
+ 0.011994999833 s,  0.970292627811 percent : RESIZE IMAGE
+ 0.015116999857 s,  1.222835659981 percent : GPU DRIVER INIT, CPU/GPU SETUP, MEMORY ALLOCATION
+ 0.010518000461 s,  0.850815951824 percent : COPY DATA TO CPU->GPU
+ 0.011033000425 s,  0.892475068569 percent : EXTRACT IMAGE
+ 0.040008001029 s,  3.236304283142 percent : COMPUTE
+ 0.000031000000 s,  0.002507633995 percent : COMPRESS IMAGE
+ 0.009673000313 s,  0.782462775707 percent : COPY DATA TO GPU->CPU
+ 0.535117983818 s, 43.286457061768 percent : SAVE IMAGE INTO FILE
+ 0.000333000004 s,  0.026936843991 percent : FREE MEMORY
+Total time:
+1.236225008965 s
+Ticks: 1373704575500
+Exiting because  exiting with last active thread context
