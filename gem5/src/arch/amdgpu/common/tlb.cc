@@ -193,6 +193,7 @@ namespace X86ISA
 	    	RequestPtr req = std::make_shared<Request>();
 		req->setPaddr(newEntry->paddr);
 		req->setVaddr(newEntry->vaddr);
+		DPRINTF(GPUTLB, "Sent request with va : %x and pa : %x\n", req->getVaddr(), req->getPaddr());
 	    	PacketPtr pkt = new Packet(req, MemCmd::TlbiExtSync);
 	    	l2LdtSidePort->sendFunctional(pkt);
 	    }
@@ -1056,13 +1057,12 @@ namespace X86ISA
          }
     }
 
-    bool
-    GpuTLB::LdtRespPort::recvTimingReq(PacketPtr pkt)
+    void
+    GpuTLB::LdtRespPort::recvFunctional(PacketPtr pkt)
     {
-	DPRINTF(GPUTLB, "Received prefetched page from LDT\n");
-	TlbEntry* entry = new TlbEntry(0, pkt->req->getPaddr(), pkt->req->getVaddr(), false, false);
+	DPRINTF(GPUTLB, "Received prefetched page from LDT with va : %x and pa : %x\n", pkt->req->getVaddr(), pkt->req->getPaddr());
+	TlbEntry* entry = new TlbEntry(0, pkt->req->getVaddr(), pkt->req->getPaddr(), false, false);
 	this->tlb->insert(pkt->req->getVaddr(), *entry);
-	return true;
     }
 
     /**

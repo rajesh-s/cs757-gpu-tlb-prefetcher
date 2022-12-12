@@ -281,9 +281,9 @@ namespace X86ISA
 	  protected:
 	    GpuTLB *tlb;
 	    int index;
-            virtual bool recvTimingReq(PacketPtr pkt);
+            virtual bool recvTimingReq(PacketPtr pkt) { }
             virtual Tick recvAtomic(PacketPtr pkt) { return 0; }
-            virtual void recvFunctional(PacketPtr pkt) { }
+            virtual void recvFunctional(PacketPtr pkt);
             virtual void recvRangeChange() { }
             virtual void recvReqRetry() { }
             virtual void recvRespRetry() { panic("recvRespRetry called"); }
