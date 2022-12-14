@@ -1,0 +1,300 @@
+Benchmark Root:   Arg1: particlefilter/
+Benchmark Name:   Arg2: particlefilter_naive
+Options:          Arg3: -x 128 -y 128 -z 10 -np 1000
+Global frequency set at 1000000000000 ticks per second
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 22.0.0.2
+gem5 compiled Dec  5 2022 04:07:39
+gem5 started Dec 14 2022 02:50:08
+gem5 executing on rajesh-4164.0-barolo.cs.wisc.edu, pid 8
+command line: build/GCN3_X86/gem5.opt configs/example/apu_se.py -n 3 --num-compute-units=64 --cu-per-sa=16 --num-gpu-complex=4 --reg-alloc-policy=dynamic --num-tccs=8 --bw-scalor=8 --num-dirs=64 --mem-size=16GB --mem-type=HBM_2000_4H_1x64 --vreg-file-size=16384 --sreg-file-size=800 --tcc-size=4MB --gpu-clock=1801MHz --ruby-clock=1000MHz --TCC_latency=121 --TCP_latency=16 --max-coalesces-per-cycle=10 --sqc-size=16kB --benchmark-root=particlefilter/ -c particlefilter_naive --L1TLBentries=4 --L2TLBentries=16 --L1TLBassoc=1 --L2TLBassoc=1 --L3TLBentries=1 --L3TLBassoc=1 '--options=-x 128 -y 128 -z 10 -np 1000'
+
+info: Standard input is not a terminal, disabling listeners.
+Num SQC =  16 Num scalar caches =  16 Num CU =  64
+incrementing idx on  4
+incrementing idx on  8
+incrementing idx on  12
+incrementing idx on  16
+incrementing idx on  20
+incrementing idx on  24
+incrementing idx on  28
+incrementing idx on  32
+incrementing idx on  36
+incrementing idx on  40
+incrementing idx on  44
+incrementing idx on  48
+incrementing idx on  52
+incrementing idx on  56
+incrementing idx on  60
+incrementing idx on  4
+incrementing idx on  8
+incrementing idx on  12
+incrementing idx on  16
+incrementing idx on  20
+incrementing idx on  24
+incrementing idx on  28
+incrementing idx on  32
+incrementing idx on  36
+incrementing idx on  40
+incrementing idx on  44
+incrementing idx on  48
+incrementing idx on  52
+incrementing idx on  56
+incrementing idx on  60
+"dot" with args ['-Tsvg', '/nobackup/condor/execute/dir_3187532/tmpdf4kci34'] returned code: 1
+
+stdout, stderr:
+ b''
+b'Error: /nobackup/condor/execute/dir_3187532/tmpdf4kci34: syntax error in line 59837 scanning a quoted string (missing endquote? longer than 16384?)\nString starting:"clk_domain&#61;system.ruby.clk_domain&#10;\\eventq_index&#61;0&#10;\\ext_routing_l\n'
+
+VIDEO SEQUENCE TOOK 0.186785
+TIME TO GET NEIGHBORS TOOK: 0.000032
+TIME TO GET WEIGHTSTOOK: 0.000065
+TIME TO SET ERROR TOOK: 0.001796
+TIME TO GET LIKELIHOODS TOOK: 0.007284
+TIME TO GET EXP TOOK: 0.000306
+TIME TO SUM WEIGHTS TOOK: 0.000018
+TIME TO NORMALIZE WEIGHTS TOOK: 0.000021
+TIME TO MOVE OBJECT TOOK: 0.000040
+XE: 64.385172
+YE: 64.156532
+0.415764
+TIME TO CALC CUM SUM TOOK: 0.000066
+TIME TO CALC U TOOK: 0.000032
+SENDING TO GPU TOOK: 0.009213
+HIP EXEC TOOK: 0.004361
+SENDING BACK FROM GPU TOOK: 0.000257
+TIME TO CALC NEW ARRAY X AND Y TOOK: 0.013873
+TIME TO RESET WEIGHTS TOOK: 0.000195
+TIME TO SET ERROR TOOK: 0.001780
+TIME TO GET LIKELIHOODS TOOK: 0.007279
+TIME TO GET EXP TOOK: 0.000288
+TIME TO SUM WEIGHTS TOOK: 0.000016
+TIME TO NORMALIZE WEIGHTS TOOK: 0.000019
+TIME TO MOVE OBJECT TOOK: 0.000039
+XE: 62.528006
+YE: 65.716399
+2.261148
+TIME TO CALC CUM SUM TOOK: 0.000093
+TIME TO CALC U TOOK: 0.000070
+SENDING TO GPU TOOK: 0.000512
+HIP EXEC TOOK: 0.000177
+SENDING BACK FROM GPU TOOK: 0.000250
+TIME TO CALC NEW ARRAY X AND Y TOOK: 0.000977
+TIME TO RESET WEIGHTS TOOK: 0.000192
+TIME TO SET ERROR TOOK: 0.001779
+TIME TO GET LIKELIHOODS TOOK: 0.007277
+TIME TO GET EXP TOOK: 0.000287
+TIME TO SUM WEIGHTS TOOK: 0.000016
+TIME TO NORMALIZE WEIGHTS TOOK: 0.000020
+TIME TO MOVE OBJECT TOOK: 0.000038
+XE: 60.667193
+YE: 66.381025
+4.095959
+TIME TO CALC CUM SUM TOOK: 0.000093
+TIME TO CALC U TOOK: 0.000071
+SENDING TO GPU TOOK: 0.000488
+HIP EXEC TOOK: 0.000154
+SENDING BACK FROM GPU TOOK: 0.000248
+TIME TO CALC NEW ARRAY X AND Y TOOK: 0.000928
+TIME TO RESET WEIGHTS TOOK: 0.000191
+TIME TO SET ERROR TOOK: 0.001778
+TIME TO GET LIKELIHOODS TOOK: 0.007276
+TIME TO GET EXP TOOK: 0.000287
+TIME TO SUM WEIGHTS TOOK: 0.000016
+TIME TO NORMALIZE WEIGHTS TOOK: 0.000020
+TIME TO MOVE OBJECT TOOK: 0.000038
+XE: 58.360057
+YE: 67.096152
+6.433903
+TIME TO CALC CUM SUM TOOK: 0.000093
+TIME TO CALC U TOOK: 0.000070
+SENDING TO GPU TOOK: 0.000482
+HIP EXEC TOOK: 0.000147
+SENDING BACK FROM GPU TOOK: 0.000248
+TIME TO CALC NEW ARRAY X AND Y TOOK: 0.000915
+TIME TO RESET WEIGHTS TOOK: 0.000191
+TIME TO SET ERROR TOOK: 0.001778
+TIME TO GET LIKELIHOODS TOOK: 0.007280
+TIME TO GET EXP TOOK: 0.000287
+TIME TO SUM WEIGHTS TOOK: 0.000016
+TIME TO NORMALIZE WEIGHTS TOOK: 0.000020
+TIME TO MOVE OBJECT TOOK: 0.000038
+XE: 56.601924
+YE: 68.528703
+8.674139
+TIME TO CALC CUM SUM TOOK: 0.000094
+TIME TO CALC U TOOK: 0.000070
+SENDING TO GPU TOOK: 0.000476
+HIP EXEC TOOK: 0.000178
+SENDING BACK FROM GPU TOOK: 0.000249
+TIME TO CALC NEW ARRAY X AND Y TOOK: 0.000941
+TIME TO RESET WEIGHTS TOOK: 0.000191
+TIME TO SET ERROR TOOK: 0.001777
+TIME TO GET LIKELIHOODS TOOK: 0.007285
+TIME TO GET EXP TOOK: 0.000287
+TIME TO SUM WEIGHTS TOOK: 0.000016
+TIME TO NORMALIZE WEIGHTS TOOK: 0.000020
+TIME TO MOVE OBJECT TOOK: 0.000038
+XE: 54.568744
+YE: 69.477429
+10.906457
+TIME TO CALC CUM SUM TOOK: 0.000097
+TIME TO CALC U TOOK: 0.000070
+SENDING TO GPU TOOK: 0.000483
+HIP EXEC TOOK: 0.000185
+SENDING BACK FROM GPU TOOK: 0.000250
+TIME TO CALC NEW ARRAY X AND Y TOOK: 0.000957
+TIME TO RESET WEIGHTS TOOK: 0.000191
+TIME TO SET ERROR TOOK: 0.001777
+TIME TO GET LIKELIHOODS TOOK: 0.007291
+TIME TO GET EXP TOOK: 0.000287
+TIME TO SUM WEIGHTS TOOK: 0.000016
+TIME TO NORMALIZE WEIGHTS TOOK: 0.000020
+TIME TO MOVE OBJECT TOOK: 0.000038
+XE: 52.275382
+YE: 70.343080
+13.330467
+TIME TO CALC CUM SUM TOOK: 0.000097
+TIME TO CALC U TOOK: 0.000070
+SENDING TO GPU TOOK: 0.000484
+HIP EXEC TOOK: 0.000153
+SENDING BACK FROM GPU TOOK: 0.000248
+TIME TO CALC NEW ARRAY X AND Y TOOK: 0.000924
+TIME TO RESET WEIGHTS TOOK: 0.000191
+TIME TO SET ERROR TOOK: 0.001778
+TIME TO GET LIKELIHOODS TOOK: 0.007292
+TIME TO GET EXP TOOK: 0.000287
+TIME TO SUM WEIGHTS TOOK: 0.000015
+TIME TO NORMALIZE WEIGHTS TOOK: 0.000020
+TIME TO MOVE OBJECT TOOK: 0.000038
+XE: 50.294665
+YE: 71.569788
+15.656880
+TIME TO CALC CUM SUM TOOK: 0.000097
+TIME TO CALC U TOOK: 0.000070
+SENDING TO GPU TOOK: 0.000477
+HIP EXEC TOOK: 0.000139
+SENDING BACK FROM GPU TOOK: 0.000251
+TIME TO CALC NEW ARRAY X AND Y TOOK: 0.000906
+TIME TO RESET WEIGHTS TOOK: 0.000191
+TIME TO SET ERROR TOOK: 0.001777
+TIME TO GET LIKELIHOODS TOOK: 0.007283
+TIME TO GET EXP TOOK: 0.000287
+TIME TO SUM WEIGHTS TOOK: 0.000016
+TIME TO NORMALIZE WEIGHTS TOOK: 0.000020
+TIME TO MOVE OBJECT TOOK: 0.000038
+XE: 48.555144
+YE: 72.755259
+17.753820
+TIME TO CALC CUM SUM TOOK: 0.000097
+TIME TO CALC U TOOK: 0.000070
+SENDING TO GPU TOOK: 0.000483
+HIP EXEC TOOK: 0.000166
+SENDING BACK FROM GPU TOOK: 0.000255
+TIME TO CALC NEW ARRAY X AND Y TOOK: 0.000943
+TIME TO RESET WEIGHTS TOOK: 0.000191
+PARTICLE FILTER TOOK 0.115521
+ENTIRE PROGRAM TOOK 0.302306
+Ticks: 438894514500
+Exiting because  exiting with last active thread context

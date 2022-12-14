@@ -1,0 +1,14 @@
+000 (4174.000.000) 2022-12-13 20:30:57 Job submitted from host: <127.0.0.1:9618?addrs=127.0.0.1-9618&alias=barolo.cs.wisc.edu&noUDP&sock=schedd_2940_2c87>
+...
+040 (4174.000.000) 2022-12-13 20:30:58 Started transferring input files
+	Transferring to host: <127.0.0.1:9618?addrs=127.0.0.1-9618&alias=barolo.cs.wisc.edu&noUDP&sock=slot1_18_3745_70f1_171>
+...
+007 (4174.000.000) 2022-12-13 20:30:59 Shadow exception!
+	Error from slot1_18@barolo.cs.wisc.edu: SHADOW at 127.0.0.1 failed to send file(s) to <127.0.0.1:23079>: error reading from /nobackup/rajesh/benchmarks/gem5-gpu-benchmark-suite/condor_baseline_new/square/results/../../../../gem5/: (errno 2) No such file or directory; STARTER failed to receive file(s) from <127.0.0.1:9618>
+	0  -  Run Bytes Sent By Job
+	763  -  Run Bytes Received By Job
+...
+012 (4174.000.000) 2022-12-13 20:30:59 Job was held.
+	Error from slot1_18@barolo.cs.wisc.edu: SHADOW at 127.0.0.1 failed to send file(s) to <127.0.0.1:23079>: error reading from /nobackup/rajesh/benchmarks/gem5-gpu-benchmark-suite/condor_baseline_new/square/results/../../../../gem5/: (errno 2) No such file or directory; STARTER failed to receive file(s) from <127.0.0.1:9618>
+	Code 13 Subcode 2
+...
