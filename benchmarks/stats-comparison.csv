@@ -1,0 +1,878 @@
+﻿benchmark,tlb_num,miss_rate,run
+particlefilter,0,5.555556,baseline
+particlefilter,1,5.555556,baseline
+particlefilter,2,7.446809,baseline
+particlefilter,3,7.291667,baseline
+particlefilter,4,7.446809,baseline
+particlefilter,5,7.446809,baseline
+particlefilter,6,5.555556,baseline
+particlefilter,7,5.555556,baseline
+backprop,0,8.740134,baseline
+backprop,1,7.915947,baseline
+backprop,2,7.47782,baseline
+backprop,3,9.498599,baseline
+backprop,4,8.590565,baseline
+backprop,5,8.554655,baseline
+backprop,6,8.521739,baseline
+backprop,7,9.747182,baseline
+backprop,8,8.947665,baseline
+backprop,9,9.328015,baseline
+backprop,10,8.873114,baseline
+backprop,11,9.004603,baseline
+backprop,12,8.263305,baseline
+backprop,13,7.925345,baseline
+backprop,14,9.124714,baseline
+backprop,15,9.445769,baseline
+backprop,16,9.676435,baseline
+backprop,17,8.314732,baseline
+backprop,18,9.067283,baseline
+backprop,19,9.275184,baseline
+backprop,20,9.392097,baseline
+backprop,21,9.8345,baseline
+backprop,22,9.035621,baseline
+backprop,23,8.676208,baseline
+backprop,24,8.407717,baseline
+backprop,25,9.260963,baseline
+backprop,26,8.637874,baseline
+backprop,27,9.741297,baseline
+backprop,28,9.253904,baseline
+backprop,29,9.714986,baseline
+backprop,30,9.164033,baseline
+backprop,31,8.909242,baseline
+backprop,32,8.30403,baseline
+backprop,33,10.32239,baseline
+backprop,34,8.754108,baseline
+backprop,35,9.027584,baseline
+backprop,36,9.921415,baseline
+backprop,37,9.111425,baseline
+backprop,38,8.97748,baseline
+backprop,39,8.874398,baseline
+backprop,40,9.273479,baseline
+backprop,41,8.224993,baseline
+backprop,42,9.101551,baseline
+backprop,43,8.947681,baseline
+backprop,44,9.574468,baseline
+backprop,45,8.972621,baseline
+backprop,46,8.377254,baseline
+backprop,47,8.803342,baseline
+backprop,48,8.841296,baseline
+backprop,49,8.673027,baseline
+backprop,50,9.319976,baseline
+backprop,51,8.347062,baseline
+backprop,52,9.802158,baseline
+backprop,53,9.140935,baseline
+backprop,54,9.451681,baseline
+backprop,55,8.472655,baseline
+backprop,56,8.086323,baseline
+backprop,57,8.185053,baseline
+backprop,58,9.506509,baseline
+backprop,59,8.787198,baseline
+backprop,60,9.634551,baseline
+backprop,61,8.70063,baseline
+backprop,62,8.432403,baseline
+backprop,63,9.562535,baseline
+gaussian,0,9.52381,baseline
+lud,0,5.381166,baseline
+lud,1,7.715134,baseline
+lud,2,9.613869,baseline
+lud,3,9.411765,baseline
+lud,4,10.009268,baseline
+lud,5,10.009268,baseline
+lud,6,10.379981,baseline
+lud,7,11.2,baseline
+lud,8,11.726384,baseline
+lud,9,11.876485,baseline
+lud,10,13.761468,baseline
+lud,11,14.327485,baseline
+lud,12,16.528926,baseline
+lud,13,18.631179,baseline
+lud,14,21.923937,baseline
+lud,15,25.543478,baseline
+lud,16,25.297619,baseline
+lud,17,24.6875,baseline
+lud,18,27.1875,baseline
+lud,19,27.1875,baseline
+lud,20,25.9375,baseline
+lud,21,25.9375,baseline
+lud,22,27.1875,baseline
+lud,23,27.1875,baseline
+lud,24,28.75,baseline
+lud,25,27.631579,baseline
+lud,26,30.263158,baseline
+lud,27,31.578947,baseline
+lud,28,30.263158,baseline
+lud,29,30.263158,baseline
+lud,30,30.263158,baseline
+lud,31,30.263158,baseline
+lud,32,30.263158,baseline
+lud,33,30.555556,baseline
+lud,34,30.555556,baseline
+lud,35,30.555556,baseline
+lud,36,34.375,baseline
+lud,37,34.375,baseline
+lud,38,34.375,baseline
+lud,39,34.375,baseline
+lud,40,34.375,baseline
+lud,41,34.583333,baseline
+lud,42,36.25,baseline
+lud,43,36.25,baseline
+lud,44,37.5,baseline
+lud,45,37.5,baseline
+lud,46,35.833333,baseline
+lud,47,35.833333,baseline
+lud,48,36.666667,baseline
+lud,49,37.5,baseline
+lud,50,35.714286,baseline
+lud,51,35.714286,baseline
+lud,52,35.714286,baseline
+lud,53,37.5,baseline
+lud,54,35.714286,baseline
+lud,55,34.821429,baseline
+lud,56,36.607143,baseline
+lud,57,37.5,baseline
+lud,58,37.5,baseline
+lud,59,37.5,baseline
+lud,60,35.576923,baseline
+lud,61,35.576923,baseline
+lud,62,36.538462,baseline
+lud,63,34.615385,baseline
+hybridsort,0,30.215827,baseline
+hybridsort,1,30.215827,baseline
+hybridsort,2,30.215827,baseline
+hybridsort,3,30.215827,baseline
+hybridsort,4,30.215827,baseline
+hybridsort,5,59.71223,baseline
+hybridsort,6,30.215827,baseline
+hybridsort,7,30.215827,baseline
+hybridsort,8,30.215827,baseline
+hybridsort,9,30.215827,baseline
+hybridsort,10,59.71223,baseline
+hybridsort,11,30.215827,baseline
+hybridsort,12,30.215827,baseline
+hybridsort,13,30.215827,baseline
+hybridsort,14,30.215827,baseline
+hybridsort,15,30.215827,baseline
+hybridsort,16,30.215827,baseline
+hybridsort,17,30.215827,baseline
+hybridsort,18,30.215827,baseline
+hybridsort,19,30.215827,baseline
+hybridsort,20,30.215827,baseline
+hybridsort,21,59.71223,baseline
+hybridsort,22,30.215827,baseline
+hybridsort,23,30.215827,baseline
+hybridsort,24,30.215827,baseline
+hybridsort,25,30.215827,baseline
+hybridsort,26,59.71223,baseline
+hybridsort,27,30.215827,baseline
+hybridsort,28,30.215827,baseline
+hybridsort,29,30.215827,baseline
+hybridsort,30,30.215827,baseline
+hybridsort,31,30.215827,baseline
+hybridsort,32,30.215827,baseline
+hybridsort,33,30.215827,baseline
+hybridsort,34,30.215827,baseline
+hybridsort,35,30.215827,baseline
+hybridsort,36,30.215827,baseline
+hybridsort,37,59.71223,baseline
+hybridsort,38,30.215827,baseline
+hybridsort,39,30.215827,baseline
+hybridsort,40,30.215827,baseline
+hybridsort,41,30.215827,baseline
+hybridsort,42,59.71223,baseline
+hybridsort,43,30.215827,baseline
+hybridsort,44,30.656934,baseline
+hybridsort,45,30.147059,baseline
+hybridsort,46,30.147059,baseline
+hybridsort,47,30.147059,baseline
+hybridsort,48,30.147059,baseline
+hybridsort,49,30.147059,baseline
+hybridsort,50,30.147059,baseline
+hybridsort,51,30.147059,baseline
+hybridsort,52,30.147059,baseline
+hybridsort,53,59.558824,baseline
+hybridsort,54,30.147059,baseline
+hybridsort,55,30.147059,baseline
+hybridsort,56,30.147059,baseline
+hybridsort,57,30.147059,baseline
+hybridsort,58,59.558824,baseline
+hybridsort,59,30.147059,baseline
+hybridsort,60,30.147059,baseline
+hybridsort,61,30.147059,baseline
+hybridsort,62,30.147059,baseline
+hybridsort,63,30.147059,baseline
+hotspot,0,70.80292,baseline
+hotspot,1,59.705882,baseline
+hotspot,2,70.684039,baseline
+hotspot,3,72.982456,baseline
+hotspot,4,40.661939,baseline
+hotspot,5,69.10828,baseline
+hotspot,6,68.241042,baseline
+hotspot,7,70.072993,baseline
+hotspot,8,63.192182,baseline
+hotspot,9,70.684039,baseline
+hotspot,10,71.335505,baseline
+hotspot,11,70.072993,baseline
+hotspot,12,70.684039,baseline
+hotspot,13,66.242038,baseline
+hotspot,14,72.607261,baseline
+hotspot,15,66.043614,baseline
+hotspot,16,68.224299,baseline
+hotspot,17,58.529412,baseline
+hotspot,18,64.169381,baseline
+hotspot,19,73.289902,baseline
+hotspot,20,69.366197,baseline
+hotspot,21,63.843648,baseline
+hotspot,22,70.684039,baseline
+hotspot,23,49.620253,baseline
+hotspot,24,72.638436,baseline
+hotspot,25,70.684039,baseline
+hotspot,26,70.070423,baseline
+hotspot,27,71.986971,baseline
+hotspot,28,71.335505,baseline
+hotspot,29,70.684039,baseline
+hotspot,30,70.80292,baseline
+hotspot,31,63.532764,baseline
+hotspot,32,72.638436,baseline
+hotspot,33,59.705882,baseline
+hotspot,34,73.289902,baseline
+hotspot,35,63.532764,baseline
+hotspot,36,72.638436,baseline
+hotspot,37,54.700855,baseline
+hotspot,38,53.562005,baseline
+hotspot,39,72.611465,baseline
+hotspot,40,68.224299,baseline
+hotspot,41,50.126582,baseline
+hotspot,42,71.019108,baseline
+hotspot,43,49.747475,baseline
+hotspot,44,71.428571,baseline
+hotspot,45,70.779221,baseline
+hotspot,46,72.666667,baseline
+hotspot,47,67.567568,baseline
+hotspot,48,71.428571,baseline
+hotspot,49,70.779221,baseline
+hotspot,50,65.202703,baseline
+hotspot,51,67.434211,baseline
+hotspot,52,69.805195,baseline
+hotspot,53,70.779221,baseline
+hotspot,54,64.527027,baseline
+hotspot,55,66.261398,baseline
+hotspot,56,70.12987,baseline
+hotspot,57,71.428571,baseline
+hotspot,58,69,baseline
+hotspot,59,70.181818,baseline
+hotspot,60,70.12987,baseline
+hotspot,61,70.779221,baseline
+hotspot,62,71.428571,baseline
+hotspot,63,70.181818,baseline
+nw,0,100,baseline
+nw,1,100,baseline
+nw,2,100,baseline
+nw,3,100,baseline
+nw,4,100,baseline
+nw,5,100,baseline
+nw,6,100,baseline
+nw,7,100,baseline
+nw,8,100,baseline
+nw,9,100,baseline
+nw,10,100,baseline
+nw,11,100,baseline
+nw,12,100,baseline
+nw,13,100,baseline
+nw,14,100,baseline
+nw,15,100,baseline
+nw,16,100,baseline
+nw,17,100,baseline
+nw,18,100,baseline
+nw,19,100,baseline
+nw,20,100,baseline
+nw,21,100,baseline
+nw,22,100,baseline
+nw,23,100,baseline
+nw,24,100,baseline
+nw,25,100,baseline
+nw,26,100,baseline
+nw,27,100,baseline
+nw,28,100,baseline
+nw,29,100,baseline
+nw,30,100,baseline
+nw,31,100,baseline
+particlefilter,0,50,LDT
+particlefilter,1,67.777778,LDT
+particlefilter,2,58.510638,LDT
+particlefilter,3,59.375,LDT
+particlefilter,4,44.680851,LDT
+particlefilter,5,64.893617,LDT
+particlefilter,6,58.888889,LDT
+particlefilter,7,50,LDT
+backprop,0,25.91687,LDT
+backprop,1,22.805873,LDT
+backprop,2,18.247566,LDT
+backprop,3,22.170972,LDT
+backprop,4,19.861362,LDT
+backprop,5,19.567027,LDT
+backprop,6,21.818766,LDT
+backprop,7,20.110041,LDT
+backprop,8,18.412965,LDT
+backprop,9,21.252372,LDT
+backprop,10,21.088435,LDT
+backprop,11,18.342427,LDT
+backprop,12,18.742515,LDT
+backprop,13,18.172043,LDT
+backprop,14,23.664887,LDT
+backprop,15,21.224363,LDT
+backprop,16,21.903882,LDT
+backprop,17,19.533616,LDT
+backprop,18,23.604369,LDT
+backprop,19,18.751806,LDT
+backprop,20,22.895078,LDT
+backprop,21,19.147622,LDT
+backprop,22,19.877164,LDT
+backprop,23,18.052516,LDT
+backprop,24,17.440605,LDT
+backprop,25,19.878823,LDT
+backprop,26,21.695973,LDT
+backprop,27,21.961887,LDT
+backprop,28,18.734793,LDT
+backprop,29,19.140515,LDT
+backprop,30,17.484997,LDT
+backprop,31,19.390744,LDT
+backprop,32,18.725212,LDT
+backprop,33,20.600982,LDT
+backprop,34,18.203435,LDT
+backprop,35,16.934189,LDT
+backprop,36,18.69783,LDT
+backprop,37,19.643355,LDT
+backprop,38,19.20887,LDT
+backprop,39,19.797688,LDT
+backprop,40,18.616423,LDT
+backprop,41,19.892625,LDT
+backprop,42,17.154583,LDT
+backprop,43,17.331164,LDT
+backprop,44,18.788592,LDT
+backprop,45,23.482759,LDT
+backprop,46,16.310489,LDT
+backprop,47,17.658402,LDT
+backprop,48,19.79493,LDT
+backprop,49,18.651561,LDT
+backprop,50,19.457275,LDT
+backprop,51,18.160096,LDT
+backprop,52,19.947507,LDT
+backprop,53,20.717378,LDT
+backprop,54,18.737388,LDT
+backprop,55,21.813488,LDT
+backprop,56,21.95122,LDT
+backprop,57,17.721172,LDT
+backprop,58,17.570499,LDT
+backprop,59,18.268943,LDT
+backprop,60,20.950133,LDT
+backprop,61,19.281768,LDT
+backprop,62,16.735859,LDT
+backprop,63,24.014337,LDT
+gaussian,0,9.52381,LDT
+lud,0,41.816462,LDT
+lud,1,50.899743,LDT
+lud,2,49.357326,LDT
+lud,3,53.470437,LDT
+lud,4,51.968504,LDT
+lud,5,51.968504,LDT
+lud,6,51.44357,LDT
+lud,7,53.018373,LDT
+lud,8,51.83727,LDT
+lud,9,48.818898,LDT
+lud,10,50.366032,LDT
+lud,11,58.112583,LDT
+lud,12,54.857143,LDT
+lud,13,57.174888,LDT
+lud,14,69.754768,LDT
+lud,15,83.333333,LDT
+lud,16,83.088235,LDT
+lud,17,83.088235,LDT
+lud,18,82.720588,LDT
+lud,19,82.720588,LDT
+lud,20,81.25,LDT
+lud,21,80.882353,LDT
+lud,22,79.044118,LDT
+lud,23,79.044118,LDT
+lud,24,77.205882,LDT
+lud,25,78.125,LDT
+lud,26,80.46875,LDT
+lud,27,78.515625,LDT
+lud,28,80.078125,LDT
+lud,29,80.078125,LDT
+lud,30,81.25,LDT
+lud,31,81.25,LDT
+lud,32,81.640625,LDT
+lud,33,84.583333,LDT
+lud,34,85.833333,LDT
+lud,35,85.833333,LDT
+lud,36,80.803571,LDT
+lud,37,83.035714,LDT
+lud,38,83.928571,LDT
+lud,39,85.267857,LDT
+lud,40,86.607143,LDT
+lud,41,84.134615,LDT
+lud,42,84.615385,LDT
+lud,43,84.615385,LDT
+lud,44,83.173077,LDT
+lud,45,83.653846,LDT
+lud,46,86.057692,LDT
+lud,47,84.134615,LDT
+lud,48,86.538462,LDT
+lud,49,86.538462,LDT
+lud,50,86.538462,LDT
+lud,51,86.538462,LDT
+lud,52,85.096154,LDT
+lud,53,85.576923,LDT
+lud,54,85.576923,LDT
+lud,55,86.057692,LDT
+lud,56,85.576923,LDT
+lud,57,85.416667,LDT
+lud,58,83.333333,LDT
+lud,59,85.416667,LDT
+lud,60,84.375,LDT
+lud,61,82.291667,LDT
+lud,62,83.854167,LDT
+lud,63,83.854167,LDT
+hybridsort,0,30.215827,LDT
+hybridsort,1,30.215827,LDT
+hybridsort,2,30.215827,LDT
+hybridsort,3,30.215827,LDT
+hybridsort,4,30.215827,LDT
+hybridsort,5,59.71223,LDT
+hybridsort,6,30.215827,LDT
+hybridsort,7,30.215827,LDT
+hybridsort,8,30.215827,LDT
+hybridsort,9,30.215827,LDT
+hybridsort,10,59.71223,LDT
+hybridsort,11,30.215827,LDT
+hybridsort,12,30.215827,LDT
+hybridsort,13,30.215827,LDT
+hybridsort,14,30.215827,LDT
+hybridsort,15,30.215827,LDT
+hybridsort,16,30.215827,LDT
+hybridsort,17,30.215827,LDT
+hybridsort,18,30.215827,LDT
+hybridsort,19,30.215827,LDT
+hybridsort,20,30.215827,LDT
+hybridsort,21,59.71223,LDT
+hybridsort,22,30.215827,LDT
+hybridsort,23,30.215827,LDT
+hybridsort,24,30.215827,LDT
+hybridsort,25,30.215827,LDT
+hybridsort,26,59.71223,LDT
+hybridsort,27,30.215827,LDT
+hybridsort,28,30.215827,LDT
+hybridsort,29,30.215827,LDT
+hybridsort,30,30.215827,LDT
+hybridsort,31,30.215827,LDT
+hybridsort,32,30.215827,LDT
+hybridsort,33,30.215827,LDT
+hybridsort,34,30.215827,LDT
+hybridsort,35,30.215827,LDT
+hybridsort,36,30.215827,LDT
+hybridsort,37,59.71223,LDT
+hybridsort,38,30.215827,LDT
+hybridsort,39,30.215827,LDT
+hybridsort,40,30.215827,LDT
+hybridsort,41,30.215827,LDT
+hybridsort,42,59.71223,LDT
+hybridsort,43,30.215827,LDT
+hybridsort,44,30.656934,LDT
+hybridsort,45,30.147059,LDT
+hybridsort,46,30.147059,LDT
+hybridsort,47,30.147059,LDT
+hybridsort,48,30.147059,LDT
+hybridsort,49,30.147059,LDT
+hybridsort,50,30.147059,LDT
+hybridsort,51,30.147059,LDT
+hybridsort,52,30.147059,LDT
+hybridsort,53,59.558824,LDT
+hybridsort,54,30.147059,LDT
+hybridsort,55,30.147059,LDT
+hybridsort,56,30.147059,LDT
+hybridsort,57,30.147059,LDT
+hybridsort,58,59.558824,LDT
+hybridsort,59,30.147059,LDT
+hybridsort,60,30.147059,LDT
+hybridsort,61,30.147059,LDT
+hybridsort,62,30.147059,LDT
+hybridsort,63,30.147059,LDT
+hotspot,0,93.789809,LDT
+hotspot,1,92.675159,LDT
+hotspot,2,92.834395,LDT
+hotspot,3,92.675159,LDT
+hotspot,4,93.159609,LDT
+hotspot,5,93.485342,LDT
+hotspot,6,92.833876,LDT
+hotspot,7,92.833876,LDT
+hotspot,8,93.485342,LDT
+hotspot,9,93.485342,LDT
+hotspot,10,92.356688,LDT
+hotspot,11,92.019544,LDT
+hotspot,12,94.462541,LDT
+hotspot,13,93.485342,LDT
+hotspot,14,92.833876,LDT
+hotspot,15,92.833876,LDT
+hotspot,16,93.312102,LDT
+hotspot,17,92.993631,LDT
+hotspot,18,92.675159,LDT
+hotspot,19,93.152866,LDT
+hotspot,20,95.440252,LDT
+hotspot,21,93.553459,LDT
+hotspot,22,96.383648,LDT
+hotspot,23,94.654088,LDT
+hotspot,24,94.267516,LDT
+hotspot,25,94.267516,LDT
+hotspot,26,94.745223,LDT
+hotspot,27,94.267516,LDT
+hotspot,28,94.267516,LDT
+hotspot,29,94.339623,LDT
+hotspot,30,94.904459,LDT
+hotspot,31,94.426752,LDT
+hotspot,32,94.267516,LDT
+hotspot,33,94.585987,LDT
+hotspot,34,96.656051,LDT
+hotspot,35,94.585987,LDT
+hotspot,36,94.267516,LDT
+hotspot,37,94.585987,LDT
+hotspot,38,94.745223,LDT
+hotspot,39,94.585987,LDT
+hotspot,40,94.585987,LDT
+hotspot,41,94.585987,LDT
+hotspot,42,95.125786,LDT
+hotspot,43,94.603175,LDT
+hotspot,44,98.253968,LDT
+hotspot,45,98.253968,LDT
+hotspot,46,98.253968,LDT
+hotspot,47,98.253968,LDT
+hotspot,48,97.936508,LDT
+hotspot,49,92.575758,LDT
+hotspot,50,93.484848,LDT
+hotspot,51,92.575758,LDT
+hotspot,52,97.936508,LDT
+hotspot,53,97.619048,LDT
+hotspot,54,91.666667,LDT
+hotspot,55,97.619048,LDT
+hotspot,56,94.285714,LDT
+hotspot,57,98.095238,LDT
+hotspot,58,94.285714,LDT
+hotspot,59,97.777778,LDT
+hotspot,60,97.619048,LDT
+hotspot,61,97.619048,LDT
+hotspot,62,97.619048,LDT
+hotspot,63,97.619048,LDT
+nw,0,100,LDT
+nw,1,100,LDT
+nw,2,100,LDT
+nw,3,100,LDT
+nw,4,100,LDT
+nw,5,100,LDT
+nw,6,100,LDT
+nw,7,100,LDT
+nw,8,100,LDT
+nw,9,100,LDT
+nw,10,100,LDT
+nw,11,100,LDT
+nw,12,100,LDT
+nw,13,100,LDT
+nw,14,100,LDT
+nw,15,100,LDT
+nw,16,100,LDT
+nw,17,100,LDT
+nw,18,100,LDT
+nw,19,100,LDT
+nw,20,100,LDT
+nw,21,100,LDT
+nw,22,100,LDT
+nw,23,100,LDT
+nw,24,100,LDT
+particlefilter,0,50,LDT + no L3
+particlefilter,1,67.777778,LDT + no L3
+particlefilter,2,58.510638,LDT + no L3
+particlefilter,3,59.375,LDT + no L3
+particlefilter,4,44.680851,LDT + no L3
+particlefilter,5,64.893617,LDT + no L3
+particlefilter,6,58.888889,LDT + no L3
+particlefilter,7,50,LDT + no L3
+backprop,0,25.91687,LDT + no L3
+backprop,1,22.805873,LDT + no L3
+backprop,2,18.247566,LDT + no L3
+backprop,3,22.170972,LDT + no L3
+backprop,4,19.861362,LDT + no L3
+backprop,5,19.567027,LDT + no L3
+backprop,6,21.818766,LDT + no L3
+backprop,7,20.110041,LDT + no L3
+backprop,8,18.412965,LDT + no L3
+backprop,9,21.252372,LDT + no L3
+backprop,10,21.088435,LDT + no L3
+backprop,11,18.342427,LDT + no L3
+backprop,12,18.742515,LDT + no L3
+backprop,13,18.172043,LDT + no L3
+backprop,14,23.664887,LDT + no L3
+backprop,15,21.224363,LDT + no L3
+backprop,16,21.903882,LDT + no L3
+backprop,17,19.533616,LDT + no L3
+backprop,18,23.604369,LDT + no L3
+backprop,19,18.751806,LDT + no L3
+backprop,20,22.895078,LDT + no L3
+backprop,21,19.147622,LDT + no L3
+backprop,22,19.877164,LDT + no L3
+backprop,23,18.052516,LDT + no L3
+backprop,24,17.440605,LDT + no L3
+backprop,25,19.878823,LDT + no L3
+backprop,26,21.695973,LDT + no L3
+backprop,27,21.961887,LDT + no L3
+backprop,28,18.734793,LDT + no L3
+backprop,29,19.140515,LDT + no L3
+backprop,30,17.484997,LDT + no L3
+backprop,31,19.390744,LDT + no L3
+backprop,32,18.725212,LDT + no L3
+backprop,33,20.600982,LDT + no L3
+backprop,34,18.203435,LDT + no L3
+backprop,35,16.934189,LDT + no L3
+backprop,36,18.69783,LDT + no L3
+backprop,37,19.643355,LDT + no L3
+backprop,38,19.20887,LDT + no L3
+backprop,39,19.797688,LDT + no L3
+backprop,40,18.616423,LDT + no L3
+backprop,41,19.892625,LDT + no L3
+backprop,42,17.154583,LDT + no L3
+backprop,43,17.331164,LDT + no L3
+backprop,44,18.788592,LDT + no L3
+backprop,45,23.482759,LDT + no L3
+backprop,46,16.310489,LDT + no L3
+backprop,47,17.658402,LDT + no L3
+backprop,48,19.79493,LDT + no L3
+backprop,49,18.651561,LDT + no L3
+backprop,50,19.457275,LDT + no L3
+backprop,51,18.160096,LDT + no L3
+backprop,52,19.947507,LDT + no L3
+backprop,53,20.717378,LDT + no L3
+backprop,54,18.737388,LDT + no L3
+backprop,55,21.813488,LDT + no L3
+backprop,56,21.95122,LDT + no L3
+backprop,57,17.721172,LDT + no L3
+backprop,58,17.570499,LDT + no L3
+backprop,59,18.268943,LDT + no L3
+backprop,60,20.950133,LDT + no L3
+backprop,61,19.281768,LDT + no L3
+backprop,62,16.735859,LDT + no L3
+backprop,63,24.014337,LDT + no L3
+gaussian,0,9.52381,LDT + no L3
+lud,0,41.816462,LDT + no L3
+lud,1,50.899743,LDT + no L3
+lud,2,49.357326,LDT + no L3
+lud,3,53.470437,LDT + no L3
+lud,4,51.968504,LDT + no L3
+lud,5,51.968504,LDT + no L3
+lud,6,51.44357,LDT + no L3
+lud,7,53.018373,LDT + no L3
+lud,8,51.83727,LDT + no L3
+lud,9,48.818898,LDT + no L3
+lud,10,50.366032,LDT + no L3
+lud,11,58.112583,LDT + no L3
+lud,12,54.857143,LDT + no L3
+lud,13,57.174888,LDT + no L3
+lud,14,69.754768,LDT + no L3
+lud,15,83.333333,LDT + no L3
+lud,16,83.088235,LDT + no L3
+lud,17,83.088235,LDT + no L3
+lud,18,82.720588,LDT + no L3
+lud,19,82.720588,LDT + no L3
+lud,20,81.25,LDT + no L3
+lud,21,80.882353,LDT + no L3
+lud,22,79.044118,LDT + no L3
+lud,23,79.044118,LDT + no L3
+lud,24,77.205882,LDT + no L3
+lud,25,78.125,LDT + no L3
+lud,26,80.46875,LDT + no L3
+lud,27,78.515625,LDT + no L3
+lud,28,80.078125,LDT + no L3
+lud,29,80.078125,LDT + no L3
+lud,30,81.25,LDT + no L3
+lud,31,81.25,LDT + no L3
+lud,32,81.640625,LDT + no L3
+lud,33,84.583333,LDT + no L3
+lud,34,85.833333,LDT + no L3
+lud,35,85.833333,LDT + no L3
+lud,36,80.803571,LDT + no L3
+lud,37,83.035714,LDT + no L3
+lud,38,83.928571,LDT + no L3
+lud,39,85.267857,LDT + no L3
+lud,40,86.607143,LDT + no L3
+lud,41,84.134615,LDT + no L3
+lud,42,84.615385,LDT + no L3
+lud,43,84.615385,LDT + no L3
+lud,44,83.173077,LDT + no L3
+lud,45,83.653846,LDT + no L3
+lud,46,86.057692,LDT + no L3
+lud,47,84.134615,LDT + no L3
+lud,48,86.538462,LDT + no L3
+lud,49,86.538462,LDT + no L3
+lud,50,86.538462,LDT + no L3
+lud,51,86.538462,LDT + no L3
+lud,52,85.096154,LDT + no L3
+lud,53,85.576923,LDT + no L3
+lud,54,85.576923,LDT + no L3
+lud,55,86.057692,LDT + no L3
+lud,56,85.576923,LDT + no L3
+lud,57,85.416667,LDT + no L3
+lud,58,83.333333,LDT + no L3
+lud,59,85.416667,LDT + no L3
+lud,60,84.375,LDT + no L3
+lud,61,82.291667,LDT + no L3
+lud,62,83.854167,LDT + no L3
+lud,63,83.854167,LDT + no L3
+hybridsort,0,30.215827,LDT + no L3
+hybridsort,1,30.215827,LDT + no L3
+hybridsort,2,30.215827,LDT + no L3
+hybridsort,3,30.215827,LDT + no L3
+hybridsort,4,30.215827,LDT + no L3
+hybridsort,5,59.71223,LDT + no L3
+hybridsort,6,30.215827,LDT + no L3
+hybridsort,7,30.215827,LDT + no L3
+hybridsort,8,30.215827,LDT + no L3
+hybridsort,9,30.215827,LDT + no L3
+hybridsort,10,59.71223,LDT + no L3
+hybridsort,11,30.215827,LDT + no L3
+hybridsort,12,30.215827,LDT + no L3
+hybridsort,13,30.215827,LDT + no L3
+hybridsort,14,30.215827,LDT + no L3
+hybridsort,15,30.215827,LDT + no L3
+hybridsort,16,30.215827,LDT + no L3
+hybridsort,17,30.215827,LDT + no L3
+hybridsort,18,30.215827,LDT + no L3
+hybridsort,19,30.215827,LDT + no L3
+hybridsort,20,30.215827,LDT + no L3
+hybridsort,21,59.71223,LDT + no L3
+hybridsort,22,30.215827,LDT + no L3
+hybridsort,23,30.215827,LDT + no L3
+hybridsort,24,30.215827,LDT + no L3
+hybridsort,25,30.215827,LDT + no L3
+hybridsort,26,59.71223,LDT + no L3
+hybridsort,27,30.215827,LDT + no L3
+hybridsort,28,30.215827,LDT + no L3
+hybridsort,29,30.215827,LDT + no L3
+hybridsort,30,30.215827,LDT + no L3
+hybridsort,31,30.215827,LDT + no L3
+hybridsort,32,30.215827,LDT + no L3
+hybridsort,33,30.215827,LDT + no L3
+hybridsort,34,30.215827,LDT + no L3
+hybridsort,35,30.215827,LDT + no L3
+hybridsort,36,30.215827,LDT + no L3
+hybridsort,37,59.71223,LDT + no L3
+hybridsort,38,30.215827,LDT + no L3
+hybridsort,39,30.215827,LDT + no L3
+hybridsort,40,30.215827,LDT + no L3
+hybridsort,41,30.215827,LDT + no L3
+hybridsort,42,59.71223,LDT + no L3
+hybridsort,43,30.215827,LDT + no L3
+hybridsort,44,30.656934,LDT + no L3
+hybridsort,45,30.147059,LDT + no L3
+hybridsort,46,30.147059,LDT + no L3
+hybridsort,47,30.147059,LDT + no L3
+hybridsort,48,30.147059,LDT + no L3
+hybridsort,49,30.147059,LDT + no L3
+hybridsort,50,30.147059,LDT + no L3
+hybridsort,51,30.147059,LDT + no L3
+hybridsort,52,30.147059,LDT + no L3
+hybridsort,53,59.558824,LDT + no L3
+hybridsort,54,30.147059,LDT + no L3
+hybridsort,55,30.147059,LDT + no L3
+hybridsort,56,30.147059,LDT + no L3
+hybridsort,57,30.147059,LDT + no L3
+hybridsort,58,59.558824,LDT + no L3
+hybridsort,59,30.147059,LDT + no L3
+hybridsort,60,30.147059,LDT + no L3
+hybridsort,61,30.147059,LDT + no L3
+hybridsort,62,30.147059,LDT + no L3
+hybridsort,63,30.147059,LDT + no L3
+hotspot,0,93.789809,LDT + no L3
+hotspot,1,92.675159,LDT + no L3
+hotspot,2,92.834395,LDT + no L3
+hotspot,3,92.675159,LDT + no L3
+hotspot,4,93.159609,LDT + no L3
+hotspot,5,93.485342,LDT + no L3
+hotspot,6,92.833876,LDT + no L3
+hotspot,7,92.833876,LDT + no L3
+hotspot,8,93.485342,LDT + no L3
+hotspot,9,93.485342,LDT + no L3
+hotspot,10,92.356688,LDT + no L3
+hotspot,11,92.019544,LDT + no L3
+hotspot,12,94.462541,LDT + no L3
+hotspot,13,93.485342,LDT + no L3
+hotspot,14,92.833876,LDT + no L3
+hotspot,15,92.833876,LDT + no L3
+hotspot,16,93.312102,LDT + no L3
+hotspot,17,92.993631,LDT + no L3
+hotspot,18,92.675159,LDT + no L3
+hotspot,19,93.152866,LDT + no L3
+hotspot,20,95.440252,LDT + no L3
+hotspot,21,93.553459,LDT + no L3
+hotspot,22,96.383648,LDT + no L3
+hotspot,23,94.654088,LDT + no L3
+hotspot,24,94.267516,LDT + no L3
+hotspot,25,94.267516,LDT + no L3
+hotspot,26,94.745223,LDT + no L3
+hotspot,27,94.267516,LDT + no L3
+hotspot,28,94.267516,LDT + no L3
+hotspot,29,94.339623,LDT + no L3
+hotspot,30,94.904459,LDT + no L3
+hotspot,31,94.426752,LDT + no L3
+hotspot,32,94.267516,LDT + no L3
+hotspot,33,94.585987,LDT + no L3
+hotspot,34,96.656051,LDT + no L3
+hotspot,35,94.585987,LDT + no L3
+hotspot,36,94.267516,LDT + no L3
+hotspot,37,94.585987,LDT + no L3
+hotspot,38,94.745223,LDT + no L3
+hotspot,39,94.585987,LDT + no L3
+hotspot,40,94.585987,LDT + no L3
+hotspot,41,94.585987,LDT + no L3
+hotspot,42,95.125786,LDT + no L3
+hotspot,43,94.603175,LDT + no L3
+hotspot,44,98.253968,LDT + no L3
+hotspot,45,98.253968,LDT + no L3
+hotspot,46,98.253968,LDT + no L3
+hotspot,47,98.253968,LDT + no L3
+hotspot,48,97.936508,LDT + no L3
+hotspot,49,92.575758,LDT + no L3
+hotspot,50,93.484848,LDT + no L3
+hotspot,51,92.575758,LDT + no L3
+hotspot,52,97.936508,LDT + no L3
+hotspot,53,97.619048,LDT + no L3
+hotspot,54,91.666667,LDT + no L3
+hotspot,55,97.619048,LDT + no L3
+hotspot,56,94.285714,LDT + no L3
+hotspot,57,98.095238,LDT + no L3
+hotspot,58,94.285714,LDT + no L3
+hotspot,59,97.777778,LDT + no L3
+hotspot,60,97.619048,LDT + no L3
+hotspot,61,97.619048,LDT + no L3
+hotspot,62,97.619048,LDT + no L3
+hotspot,63,97.619048,LDT + no L3
+nw,0,100,LDT + no L3
+nw,1,100,LDT + no L3
+nw,2,100,LDT + no L3
+nw,3,100,LDT + no L3
+nw,4,100,LDT + no L3
+nw,5,100,LDT + no L3
+nw,6,100,LDT + no L3
+nw,7,100,LDT + no L3
+nw,8,100,LDT + no L3
+nw,9,100,LDT + no L3
+nw,10,100,LDT + no L3
+nw,11,100,LDT + no L3
+nw,12,100,LDT + no L3
+nw,13,100,LDT + no L3
+nw,14,100,LDT + no L3
+nw,15,100,LDT + no L3
+nw,16,100,LDT + no L3
+nw,17,100,LDT + no L3
+nw,18,100,LDT + no L3
+nw,19,100,LDT + no L3
+nw,20,100,LDT + no L3
+nw,21,100,LDT + no L3
+nw,22,100,LDT + no L3
+nw,23,100,LDT + no L3
+nw,24,100,LDT + no L3
