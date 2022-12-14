@@ -1,0 +1,159 @@
+Benchmark Root:   Arg1: hotspot/
+Benchmark Name:   Arg2: hotspot
+Options:          Arg3: 512 2 2 hotspot/temp_512 hotspot/power_512 output.out
+Global frequency set at 1000000000000 ticks per second
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 32 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+Forcing maxCoalescedReqs to 1 (TLB assoc.) 
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 22.0.0.2
+gem5 compiled Dec 12 2022 19:56:41
+gem5 started Dec 13 2022 14:50:37
+gem5 executing on rajesh-4128.0-barolo.cs.wisc.edu, pid 8
+command line: build/GCN3_X86/gem5.opt configs/example/apu_se.py -n 3 --num-compute-units=64 --cu-per-sa=16 --num-gpu-complex=4 --reg-alloc-policy=dynamic --num-tccs=8 --bw-scalor=8 --num-dirs=64 --mem-size=16GB --mem-type=HBM_2000_4H_1x64 --vreg-file-size=16384 --sreg-file-size=800 --tcc-size=4MB --gpu-clock=1801MHz --ruby-clock=1000MHz --TCC_latency=121 --TCP_latency=16 --max-coalesces-per-cycle=10 --sqc-size=16kB --benchmark-root=hotspot/ -c hotspot --L1TLBentries=4 --L2TLBentries=16 --L1TLBassoc=1 --L2TLBassoc=1 '--options=512 2 2 hotspot/temp_512 hotspot/power_512 output.out'
+
+info: Standard input is not a terminal, disabling listeners.
+Num SQC =  16 Num scalar caches =  16 Num CU =  64
+incrementing idx on  4
+incrementing idx on  8
+incrementing idx on  12
+incrementing idx on  16
+incrementing idx on  20
+incrementing idx on  24
+incrementing idx on  28
+incrementing idx on  32
+incrementing idx on  36
+incrementing idx on  40
+incrementing idx on  44
+incrementing idx on  48
+incrementing idx on  52
+incrementing idx on  56
+incrementing idx on  60
+incrementing idx on  4
+incrementing idx on  8
+incrementing idx on  12
+incrementing idx on  16
+incrementing idx on  20
+incrementing idx on  24
+incrementing idx on  28
+incrementing idx on  32
+incrementing idx on  36
+incrementing idx on  40
+incrementing idx on  44
+incrementing idx on  48
+incrementing idx on  52
+incrementing idx on  56
+incrementing idx on  60
+"dot" with args ['-Tsvg', '/nobackup/condor/execute/dir_2869345/tmpkf6y2ui7'] returned code: 1
+
+stdout, stderr:
+ b''
+b'Error: /nobackup/condor/execute/dir_2869345/tmpkf6y2ui7: syntax error in line 59993 scanning a quoted string (missing endquote? longer than 16384?)\nString starting:"clk_domain&#61;system.ruby.clk_domain&#10;\\eventq_index&#61;0&#10;\\ext_routing_l\n'
+
+WG size of kernel = 16 X 16
+pyramidHeight: 2
+gridSize: [512, 512]
+border:[2, 2]
+blockGrid:[43, 43]
+targetBlock:[12, 12]
+Start computing the transient temperature
+Ending simulation
+Ticks: 7028989806500
+Exiting because  exiting with last active thread context
